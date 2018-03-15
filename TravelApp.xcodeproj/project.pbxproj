@@ -24,6 +24,8 @@
 		4F9A1C09205A6CAD002663EF /* RobotoSlab-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4F9A1C05205A6CAC002663EF /* RobotoSlab-Thin.ttf */; };
 		4F9A1C0B205A6FE3002663EF /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9A1C0A205A6FE3002663EF /* ActivityViewController.swift */; };
 		4F9A1C0D205A7319002663EF /* ActivityYouViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9A1C0C205A7319002663EF /* ActivityYouViewController.swift */; };
+		4F9A1C1A205A903C002663EF /* ActivityYouTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9A1C18205A903C002663EF /* ActivityYouTableViewCell.swift */; };
+		4F9A1C1B205A903C002663EF /* ActivityYouTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F9A1C19205A903C002663EF /* ActivityYouTableViewCell.xib */; };
 		4F9C0A4A20567E1F00017A55 /* SpotCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9C0A4920567E1F00017A55 /* SpotCollectionViewCell.swift */; };
 		4FD814FA204FF3D900AE40B6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD814F9204FF3D900AE40B6 /* LoginViewController.swift */; };
 		4FD814FC204FF66600AE40B6 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD814FB204FF66600AE40B6 /* RegisterViewController.swift */; };
@@ -56,6 +58,8 @@
 		4F9A1C05205A6CAC002663EF /* RobotoSlab-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoSlab-Thin.ttf"; sourceTree = "<group>"; };
 		4F9A1C0A205A6FE3002663EF /* ActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
 		4F9A1C0C205A7319002663EF /* ActivityYouViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityYouViewController.swift; sourceTree = "<group>"; };
+		4F9A1C18205A903C002663EF /* ActivityYouTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityYouTableViewCell.swift; sourceTree = "<group>"; };
+		4F9A1C19205A903C002663EF /* ActivityYouTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActivityYouTableViewCell.xib; sourceTree = "<group>"; };
 		4F9C0A4920567E1F00017A55 /* SpotCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotCollectionViewCell.swift; sourceTree = "<group>"; };
 		4FD814F9204FF3D900AE40B6 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		4FD814FB204FF66600AE40B6 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
@@ -112,6 +116,7 @@
 		4F1F63DD204EDA0800148499 /* TravelApp */ = {
 			isa = PBXGroup;
 			children = (
+				4F9A1C0F205A8D7F002663EF /* Xibs */,
 				4F9A1C01205A6C59002663EF /* Fonts */,
 				4FD814FF205029AC00AE40B6 /* View */,
 				4FA68BF5204FE899000CA9AA /* Controller */,
@@ -134,6 +139,14 @@
 				4F9A1C05205A6CAC002663EF /* RobotoSlab-Thin.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		4F9A1C0F205A8D7F002663EF /* Xibs */ = {
+			isa = PBXGroup;
+			children = (
+				4F9A1C19205A903C002663EF /* ActivityYouTableViewCell.xib */,
+			);
+			path = Xibs;
 			sourceTree = "<group>";
 		};
 		4FA68BF5204FE899000CA9AA /* Controller */ = {
@@ -163,6 +176,7 @@
 				4F9C0A4920567E1F00017A55 /* SpotCollectionViewCell.swift */,
 				4FECEF272056E2CC008006D9 /* NewsPhotoCollectionViewCell.swift */,
 				4F4FAD0920580A89006D2ADB /* ExploreCollectionViewCell.swift */,
+				4F9A1C18205A903C002663EF /* ActivityYouTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -247,6 +261,7 @@
 			files = (
 				4F9A1C08205A6CAD002663EF /* RobotoSlab-Regular.ttf in Resources */,
 				4F9A1C06205A6CAD002663EF /* RobotoSlab-Bold.ttf in Resources */,
+				4F9A1C1B205A903C002663EF /* ActivityYouTableViewCell.xib in Resources */,
 				4F9A1C09205A6CAD002663EF /* RobotoSlab-Thin.ttf in Resources */,
 				4F9A1C07205A6CAD002663EF /* RobotoSlab-Light.ttf in Resources */,
 				4F1F63E9204EDA0800148499 /* LaunchScreen.storyboard in Resources */,
@@ -324,6 +339,7 @@
 				4F9C0A4A20567E1F00017A55 /* SpotCollectionViewCell.swift in Sources */,
 				4F4FAD0820580A48006D2ADB /* ExploreViewController.swift in Sources */,
 				4F1F63E1204EDA0800148499 /* SplashViewController.swift in Sources */,
+				4F9A1C1A205A903C002663EF /* ActivityYouTableViewCell.swift in Sources */,
 				4F1F63DF204EDA0800148499 /* AppDelegate.swift in Sources */,
 				4F14053E2052D13F00DE135D /* PhotosCollectionViewCell.swift in Sources */,
 				4F9A1C0D205A7319002663EF /* ActivityYouViewController.swift in Sources */,

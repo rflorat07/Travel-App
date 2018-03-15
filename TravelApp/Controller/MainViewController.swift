@@ -33,6 +33,7 @@ class MainViewController: UIViewController {
         self.tabBarController?.tabBar.tintColor = .black
         self.tabBarController?.tabBar.clipsToBounds = false
         self.tabBarController?.tabBar.layer.borderWidth = 0.50
+        self.tabBarController?.tabBar.backgroundColor = .white
         
         UIApplication.shared.statusBarStyle = UIStatusBarStyle.default
     }
@@ -56,6 +57,7 @@ class MainViewController: UIViewController {
         self.tabBarController?.tabBar.clipsToBounds = true
         self.tabBarController?.tabBar.layer.borderColor = #colorLiteral(red: 0.6588235294, green: 0.7137254902, blue: 0.7843137255, alpha: 1)
         self.tabBarController?.tabBar.layer.borderWidth = 0.0
+        self.tabBarController?.tabBar.backgroundColor = .clear
         self.tabBarController?.tabBar.backgroundImage = UIImage()
         
         // StatusBar Style
