@@ -30,7 +30,9 @@ class MainViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
-        UITabBar.appearance().tintColor = nil
+        self.tabBarController?.tabBar.tintColor = .black
+        self.tabBarController?.tabBar.clipsToBounds = false
+        self.tabBarController?.tabBar.layer.borderWidth = 0.50
         
         UIApplication.shared.statusBarStyle = UIStatusBarStyle.default
     }
@@ -48,13 +50,15 @@ class MainViewController: UIViewController {
     
     func changeTabBarAndStatusBarStyle() {
         
-        // Tab Bar changes the selected color
+        // TabBar Style
         
-        //UITabBar.appearance().tintColor = .white
-        //UITabBar.appearance().shadowImage = UIImage()
-        UITabBar.appearance().backgroundImage = UIImage()
+        self.tabBarController?.tabBar.tintColor = .white
+        self.tabBarController?.tabBar.clipsToBounds = true
+        self.tabBarController?.tabBar.layer.borderColor = #colorLiteral(red: 0.6588235294, green: 0.7137254902, blue: 0.7843137255, alpha: 1)
+        self.tabBarController?.tabBar.layer.borderWidth = 0.0
+        self.tabBarController?.tabBar.backgroundImage = UIImage()
         
-        // Status Bar Style
+        // StatusBar Style
         
         UIApplication.shared.statusBarStyle = .lightContent
     }
