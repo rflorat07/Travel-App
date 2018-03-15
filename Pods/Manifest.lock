@@ -1,0 +1,15 @@
+PODS:
+  - Spring (1.0.5)
+  - XLPagerTabStrip (8.0.0)
+
+DEPENDENCIES:
+  - Spring
+  - XLPagerTabStrip (~> 8.0)
+
+SPEC CHECKSUMS:
+  Spring: 17901566c8ecf3a1327902b940406c64512f9bb1
+  XLPagerTabStrip: d1ab378af0923320ec0b5eab11d7b2f803d31261
+
+PODFILE CHECKSUM: 6db6cfac7240b94058694a5887d15f620eb338e5
+
+COCOAPODS: 1.4.0
