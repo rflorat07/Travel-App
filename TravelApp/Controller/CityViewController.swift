@@ -12,8 +12,9 @@ class CityViewController: UIViewController {
     
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var bodyLabel: UILabel!
-    @IBOutlet weak var coverImageView: UIImageView!
+    @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var opacityImageView: UIView!
+    @IBOutlet weak var coverImageView: UIImageView!
     
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var photoCoverView: UIView!
@@ -54,11 +55,26 @@ class CityViewController: UIViewController {
 extension CityViewController: UIScrollViewDelegate {
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        
+        cityLabel.textAlignment = .left
+        cityLabel.transform = CGAffineTransform(translationX: 0 , y: 0)
+        
         let offsetY = scrollView.contentOffset.y
-        if offsetY < 0 {
+        
+        if offsetY <= 0 {
+            
             photoCoverView.transform = CGAffineTransform(translationX: 0, y: offsetY)
+            
             coverImageView.transform = CGAffineTransform(translationX: 0, y: -offsetY/5)
+            
             opacityImageView.transform = CGAffineTransform(translationX: 0, y: -offsetY/5)
+            
+        } else if offsetY > 135 {
+            
+            photoCoverView.transform = CGAffineTransform(translationX: 0, y: offsetY - 135)
+            
+            self.cityLabel.textAlignment = .center
+            
         }
     }
 }

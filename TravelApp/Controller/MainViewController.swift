@@ -34,7 +34,7 @@ class MainViewController: UIViewController {
         self.tabBarController?.tabBar.clipsToBounds = false
         self.tabBarController?.tabBar.layer.borderWidth = 0.50
         self.tabBarController?.tabBar.backgroundColor = .white
-        
+
         UIApplication.shared.statusBarStyle = UIStatusBarStyle.default
     }
     

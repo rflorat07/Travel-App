@@ -45,11 +45,10 @@ class ActivityYouViewController: UITableViewController, IndicatorInfoProvider {
     
     func loadViewData(){
         
-        tableView.register(UINib(nibName: "ActivityYouTableViewCell", bundle: Bundle.main), forCellReuseIdentifier: cellIdentifier)
         tableView.rowHeight = 110
         tableView.allowsSelection = false
-        
-        
+        tableView.showsVerticalScrollIndicator = false
+        tableView.register(UINib(nibName: "ActivityYouTableViewCell", bundle: Bundle.main), forCellReuseIdentifier: cellIdentifier)
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {

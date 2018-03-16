@@ -17,27 +17,27 @@ let countries = [
         "title": "Spagna",
         "caption": "7 luoghi da visitare",
         "body": "La Spagna, paese della penisola iberica, comprende 17 comunità autonome con diverse culture e caratteristiche geografiche. La capitale Madrid ospita il Palazzo reale e il museo del Prado, dove sono esposte le opere dei maestri europei.",
-        "image": "country-1",
+        "image": "Spain",
         "places": [
             [
                 "title": "Barcellona",
                 "body" : "Barcellona, la cosmopolita capitale della regione spagnola della Catalogna, è celebre soprattutto per l'arte e l'architettura. La basilica della Sagrada Família e gli altri stravaganti edifici progettati da Antoni Gaudí sono il simbolo della città.",
-                "image": "barcelona"
+                "image": "Barcelona"
             ],
             [
                 "title": "Madrid",
                 "body" : "Madrid, la capitale al centro della Spagna, è una città caratterizzata da eleganti viali e parchi ampi e curati, come il parco del Buen Retiro. A Madrid sono custodite moltissime opere d'arte europee, come i dipinti di Goya, Velázquez e altri maestri spagnoli che si trovano al museo del Prado.",
-                "image": "madrid"
+                "image": "Madrid"
             ],
             [
                 "title": "Majorca",
                 "body" : "Maiorca è un'isola del Mediterraneo che fa parte dell'arcipelago delle Baleari. L'isola è conosciuta per i resort balneari, le baie protette, le montagne di roccia calcarea e i resti romani e moreschi. ",
-                "image": "majorca"
+                "image": "Majorca"
             ],
             [
                 "title": "Tenerife",
                 "body" : "Tenerife è la più grande delle isole spagnole che si trovano al largo della costa occidentale dell'Africa, le Canarie. L'isola è dominata dal picco più alto della Spagna: il monte Teide, un vulcano dormiente.",
-                "image": "tenerife"
+                "image": "Tenerife"
             ]
         ]
     ],
@@ -45,7 +45,7 @@ let countries = [
         "title": "Scozia",
         "caption": "24 luoghi da visitare",
         "body": "La Scozia, il Paese più settentrionale del Regno Unito, è una terra dai selvaggi paesaggi montuosi come le Cairngorms e le Highlands Nord-occidentali, intervallate da ,glens (valli) e loch (laghi) di origine glaciale. ",
-        "image": "country-2",
+        "image": "Scotland",
         "places": [
             [
                 "title": "Edimburgo",
@@ -73,7 +73,7 @@ let countries = [
         "title": "Nuova Zelanda",
         "caption": "10 luoghi da visitare",
         "body": "La Nuova Zelanda si trova a sud-ovest dell'Oceano Pacifico e consiste di due isole principali formate dall'azione dei vulcani e delle glaciazioni. La capitale Wellington, nell'Isola del Nord, è sede del Te Papa Tongarewa, il grande museo nazionale.",
-        "image": "country-3",
+        "image": "New-zealand",
         "places": [
             [
                 "title": "Auckland",
@@ -103,22 +103,37 @@ let cities = [
     [
         "title": "Venice",
         "image": "Venice",
-    ],
+        ],
     [
         "title": "London",
         "image": "London",
-    ],
+        ],
     [
         "title": "Berlin",
         "image": "Berlin",
-    ],
+        ],
     [
         "title": "Rome",
         "image": "Rome",
-    ],
+        ],
     [
         "title": "Moscow",
         "image": "Moscow",
+        ]
+]
+
+let trips =  [
+    [
+        "title": "San Francisco",
+        "image": "San-Francisco",
+    ],
+    [
+        "title": "Sydney",
+        "image": "Sydney",
+    ],
+    [
+        "title": "New York",
+        "image": "New-York",
     ]
 ]
 
