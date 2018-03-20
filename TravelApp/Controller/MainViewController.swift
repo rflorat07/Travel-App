@@ -7,17 +7,24 @@
 //
 
 import UIKit
+import AnimatedCollectionViewLayout
 
 class MainViewController: UIViewController {
     
+    @IBOutlet weak var countryView: UIView!
     @IBOutlet weak var countryCollectionView: UICollectionView!
-   
+    
+    /// animator, clipToBounds, row, column
+    var  animator: (LayoutAttributesAnimator, Bool, Int, Int)!
+    var  direction: UICollectionViewScrollDirection = .horizontal
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         countryCollectionView.delegate = self
         countryCollectionView.dataSource = self
         
+        settingAnimatedCollectionView()
         changeTabBarAndStatusBarStyle()
         
     }
@@ -34,7 +41,7 @@ class MainViewController: UIViewController {
         self.tabBarController?.tabBar.clipsToBounds = false
         self.tabBarController?.tabBar.layer.borderWidth = 0.50
         self.tabBarController?.tabBar.backgroundColor = .white
-
+        
         UIApplication.shared.statusBarStyle = UIStatusBarStyle.default
     }
     
@@ -47,6 +54,25 @@ class MainViewController: UIViewController {
             
             toViewController.country = country
         }
+    }
+    
+    func settingAnimatedCollectionView() {
+        
+        countryCollectionView?.isPagingEnabled = false
+        
+        animator = (LinearCardAttributesAnimator(minAlpha: 0.5, itemSpacing: 0.02, scaleRate: 1.0), false, 1, 1)
+        
+        let layout = AnimatedCollectionViewLayout()
+        layout.scrollDirection = .horizontal
+        layout.animator = animator?.0
+        layout.estimatedItemSize = CGSize( width: 259, height: 390)
+        countryCollectionView.collectionViewLayout = layout
+        
+        if countries.count > 1 {
+            countryCollectionView.scrollToItem(at: IndexPath(item: 1, section: 0), at: .centeredHorizontally, animated: true)
+        }
+        
+        
     }
     
     func changeTabBarAndStatusBarStyle() {
@@ -68,7 +94,7 @@ class MainViewController: UIViewController {
 }
 
 
-extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return countries.count
@@ -80,12 +106,15 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
         
         let country = countries[indexPath.row]
         
+        cell.clipsToBounds = animator.1
+        
         cell.titleLabel.text = (country["title"] as! String)
         cell.captionLabel.text = (country["caption"] as! String)
         cell.coverImageView.image = UIImage(named: country["image"]! as! String )
         
         return cell
     }
+        
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         performSegue(withIdentifier: "COUNTRY", sender: indexPath)

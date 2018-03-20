@@ -1,15 +1,18 @@
 PODS:
+  - AnimatedCollectionViewLayout (0.3.0)
   - Spring (1.0.5)
   - XLPagerTabStrip (8.0.0)
 
 DEPENDENCIES:
+  - AnimatedCollectionViewLayout
   - Spring
   - XLPagerTabStrip (~> 8.0)
 
 SPEC CHECKSUMS:
+  AnimatedCollectionViewLayout: 504b992a4258eb39d2dd2b2b48e84b4b95860fd7
   Spring: 17901566c8ecf3a1327902b940406c64512f9bb1
   XLPagerTabStrip: d1ab378af0923320ec0b5eab11d7b2f803d31261
 
-PODFILE CHECKSUM: 6db6cfac7240b94058694a5887d15f620eb338e5
+PODFILE CHECKSUM: fdbf37add256171b27fe3dda1e53275d4052a5e8
 
 COCOAPODS: 1.4.0

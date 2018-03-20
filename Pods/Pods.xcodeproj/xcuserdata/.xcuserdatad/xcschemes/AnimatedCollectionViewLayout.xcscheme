@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'E310D75702A4F156DAB8991051474958'
-               BlueprintName = 'XLPagerTabStrip-XLPagerTabStrip'
+               BlueprintIdentifier = '01B5F9358EAD17782FA546BF99060034'
+               BlueprintName = 'AnimatedCollectionViewLayout'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'XLPagerTabStrip-XLPagerTabStrip.bundle'>
+               BuildableName = 'AnimatedCollectionViewLayout.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

@@ -10,5 +10,6 @@ target 'TravelApp' do
   # Pods for TravelApp
   pod 'Spring'
   pod 'XLPagerTabStrip', '~> 8.0'
+  pod 'AnimatedCollectionViewLayout'
 
 end
