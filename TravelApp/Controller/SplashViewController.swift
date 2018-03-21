@@ -9,21 +9,21 @@
 import UIKit
 
 class SplashViewController: UIViewController {
-
+    
+    @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var signUpButton: UIButton!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-
-
-
+    
     @IBAction func loginButtonTapped(_ sender: UIButton) {
         performSegue(withIdentifier: "LOGIN", sender: nil)
     }
     
-    
     @IBAction func signUpButtonTapped(_ sender: UIButton) {
-                performSegue(withIdentifier: "REGISTER", sender: nil)
+        performSegue(withIdentifier: "REGISTER", sender: nil)
     }
-    
 }
 

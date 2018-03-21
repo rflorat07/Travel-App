@@ -10,8 +10,10 @@ import UIKit
 
 class ProfileViewController: UIViewController {
     
+    @IBOutlet weak var navTitleLabel: UILabel!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var coverProfileView: UIView!
+    @IBOutlet weak var avatarView: UIView!
     @IBOutlet weak var coverImageView: UIImageView!
     @IBOutlet weak var tripsCollectionView: UICollectionView!
     
@@ -22,9 +24,6 @@ class ProfileViewController: UIViewController {
         tripsCollectionView.delegate = self
         tripsCollectionView.dataSource = self
     }
-    
-    
-    
 }
 
 extension ProfileViewController: UIScrollViewDelegate {
@@ -36,6 +35,8 @@ extension ProfileViewController: UIScrollViewDelegate {
         if offsetY < 0 {
             coverProfileView.transform = CGAffineTransform(translationX: 0, y: offsetY)
             coverImageView.transform = CGAffineTransform(translationX: 0, y: -offsetY/5)
+            navTitleLabel.transform = CGAffineTransform(translationX: 0, y: -offsetY/50)
+            avatarView.transform = CGAffineTransform(translationX: 0, y: -offsetY/50)
         } 
     }
     

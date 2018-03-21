@@ -91,6 +91,8 @@ class MainViewController: UIViewController {
         UIApplication.shared.statusBarStyle = .lightContent
     }
     
+     @IBAction func unwindToMainViewController(segue:UIStoryboardSegue) { }
+    
 }
 
 
@@ -114,10 +116,14 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
         
         return cell
     }
-        
+    
+
+    
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         performSegue(withIdentifier: "COUNTRY", sender: indexPath)
     }
     
 }
+
+

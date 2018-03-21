@@ -45,7 +45,7 @@ class CountryInfoViewController: UIViewController {
     
     
     @IBAction func backButtonTapped(_ sender: UIButton) {
-        dismiss(animated: true, completion: nil)
+        performSegue(withIdentifier: "unwindToMainViewController", sender: self)
     }
     
     
