@@ -19,6 +19,12 @@
 		4F4FAD0A20580A89006D2ADB /* ExploreCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4FAD0920580A89006D2ADB /* ExploreCollectionViewCell.swift */; };
 		4F619F54205198660020DAB5 /* CountryInfoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F619F53205198660020DAB5 /* CountryInfoCollectionViewCell.swift */; };
 		4F691D7320627C01006CF28E /* SpotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F691D7220627C01006CF28E /* SpotViewController.swift */; };
+		4F723E7B2063B383009FB43B /* TripsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F723E7A2063B382009FB43B /* TripsCollectionViewCell.swift */; };
+		4F723E7D2063B3E1009FB43B /* ProfileEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F723E7C2063B3E1009FB43B /* ProfileEditViewController.swift */; };
+		4F723E7F2063BC73009FB43B /* UISwitchCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F723E7E2063BC73009FB43B /* UISwitchCustom.swift */; };
+		4F723E812063F086009FB43B /* ContinentCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F723E802063F086009FB43B /* ContinentCollectionViewCell.swift */; };
+		4F723E832063F1CA009FB43B /* FeaturesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F723E822063F1CA009FB43B /* FeaturesCollectionViewCell.swift */; };
+		4F723E8520640650009FB43B /* FiltersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F723E8420640650009FB43B /* FiltersViewController.swift */; };
 		4F9A1C06205A6CAD002663EF /* RobotoSlab-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4F9A1C02205A6CA7002663EF /* RobotoSlab-Bold.ttf */; };
 		4F9A1C07205A6CAD002663EF /* RobotoSlab-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4F9A1C03205A6CA9002663EF /* RobotoSlab-Light.ttf */; };
 		4F9A1C08205A6CAD002663EF /* RobotoSlab-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4F9A1C04205A6CAA002663EF /* RobotoSlab-Regular.ttf */; };
@@ -56,6 +62,12 @@
 		4F4FAD0920580A89006D2ADB /* ExploreCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreCollectionViewCell.swift; sourceTree = "<group>"; };
 		4F619F53205198660020DAB5 /* CountryInfoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryInfoCollectionViewCell.swift; sourceTree = "<group>"; };
 		4F691D7220627C01006CF28E /* SpotViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotViewController.swift; sourceTree = "<group>"; };
+		4F723E7A2063B382009FB43B /* TripsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsCollectionViewCell.swift; sourceTree = "<group>"; };
+		4F723E7C2063B3E1009FB43B /* ProfileEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditViewController.swift; sourceTree = "<group>"; };
+		4F723E7E2063BC73009FB43B /* UISwitchCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISwitchCustom.swift; sourceTree = "<group>"; };
+		4F723E802063F086009FB43B /* ContinentCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContinentCollectionViewCell.swift; sourceTree = "<group>"; };
+		4F723E822063F1CA009FB43B /* FeaturesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturesCollectionViewCell.swift; sourceTree = "<group>"; };
+		4F723E8420640650009FB43B /* FiltersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersViewController.swift; sourceTree = "<group>"; };
 		4F9A1C02205A6CA7002663EF /* RobotoSlab-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoSlab-Bold.ttf"; sourceTree = "<group>"; };
 		4F9A1C03205A6CA9002663EF /* RobotoSlab-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoSlab-Light.ttf"; sourceTree = "<group>"; };
 		4F9A1C04205A6CAA002663EF /* RobotoSlab-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoSlab-Regular.ttf"; sourceTree = "<group>"; };
@@ -171,6 +183,8 @@
 				4F9A1C0C205A7319002663EF /* ActivityYouViewController.swift */,
 				4F9A1C1C205ADEA1002663EF /* ProfileViewController.swift */,
 				4F691D7220627C01006CF28E /* SpotViewController.swift */,
+				4F723E7C2063B3E1009FB43B /* ProfileEditViewController.swift */,
+				4F723E8420640650009FB43B /* FiltersViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -186,6 +200,9 @@
 				4F4FAD0920580A89006D2ADB /* ExploreCollectionViewCell.swift */,
 				4F9A1C18205A903C002663EF /* ActivityYouTableViewCell.swift */,
 				4FB07915205BBC9F001ABC55 /* ProfileTripsCollectionViewCell.swift */,
+				4F723E7A2063B382009FB43B /* TripsCollectionViewCell.swift */,
+				4F723E802063F086009FB43B /* ContinentCollectionViewCell.swift */,
+				4F723E822063F1CA009FB43B /* FeaturesCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -194,6 +211,7 @@
 			isa = PBXGroup;
 			children = (
 				4FD844B120512F14003DCAC3 /* Data.swift */,
+				4F723E7E2063BC73009FB43B /* UISwitchCustom.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -348,11 +366,14 @@
 				4FD814FA204FF3D900AE40B6 /* LoginViewController.swift in Sources */,
 				4FD81501205029D600AE40B6 /* CountryCollectionViewCell.swift in Sources */,
 				4F9C0A4A20567E1F00017A55 /* SpotCollectionViewCell.swift in Sources */,
+				4F723E7F2063BC73009FB43B /* UISwitchCustom.swift in Sources */,
+				4F723E8520640650009FB43B /* FiltersViewController.swift in Sources */,
 				4F4FAD0820580A48006D2ADB /* ExploreViewController.swift in Sources */,
 				4F1F63E1204EDA0800148499 /* SplashViewController.swift in Sources */,
 				4F9A1C1A205A903C002663EF /* ActivityYouTableViewCell.swift in Sources */,
 				4FB07916205BBC9F001ABC55 /* ProfileTripsCollectionViewCell.swift in Sources */,
 				4F1F63DF204EDA0800148499 /* AppDelegate.swift in Sources */,
+				4F723E7B2063B383009FB43B /* TripsCollectionViewCell.swift in Sources */,
 				4F14053E2052D13F00DE135D /* PhotosCollectionViewCell.swift in Sources */,
 				4F9A1C0D205A7319002663EF /* ActivityYouViewController.swift in Sources */,
 				4F14053C2052CF5700DE135D /* CityViewController.swift in Sources */,
@@ -364,6 +385,9 @@
 				4F9A1C0B205A6FE3002663EF /* ActivityViewController.swift in Sources */,
 				4F4FAD0A20580A89006D2ADB /* ExploreCollectionViewCell.swift in Sources */,
 				4FD814FE205028E900AE40B6 /* MainViewController.swift in Sources */,
+				4F723E832063F1CA009FB43B /* FeaturesCollectionViewCell.swift in Sources */,
+				4F723E812063F086009FB43B /* ContinentCollectionViewCell.swift in Sources */,
+				4F723E7D2063B3E1009FB43B /* ProfileEditViewController.swift in Sources */,
 				4F9A1C1D205ADEA1002663EF /* ProfileViewController.swift in Sources */,
 				4FECEF282056E2CC008006D9 /* NewsPhotoCollectionViewCell.swift in Sources */,
 				4F619F54205198660020DAB5 /* CountryInfoCollectionViewCell.swift in Sources */,

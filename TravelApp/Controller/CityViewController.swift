@@ -45,6 +45,19 @@ class CityViewController: UIViewController {
         coverImageView.image = UIImage(named: city["image"]!)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "SPOT_INFO" {
+            let toViewController = segue.destination as! SpotViewController
+            let indexPath = sender as! IndexPath
+            let spot = spots[indexPath.row]
+            
+            toViewController.spot = spot
+        }
+        
+    }
+    
+    
     @IBAction func backButtonTapped(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
     }
@@ -83,7 +96,7 @@ extension CityViewController: UICollectionViewDelegate, UICollectionViewDataSour
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return spots.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -96,13 +109,23 @@ extension CityViewController: UICollectionViewDelegate, UICollectionViewDataSour
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "spotCell", for: indexPath) as! SpotCollectionViewCell
             
+            let spot = spots[indexPath.row]
+            
+            cell.titleLabel.text = spot["title"]
+            cell.captionLabel.text = spot["caption"]
+            cell.coverImageView.image = UIImage(named: spot["image"]!)
+            
             return cell
         }
         
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        //Show Photo
+        
+        if collectionView == self.spotCollectionView {
+            performSegue(withIdentifier: "SPOT_INFO", sender: indexPath)
+        }
+        
     }
     
 }

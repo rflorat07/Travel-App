@@ -126,14 +126,94 @@ let trips =  [
     [
         "title": "San Francisco",
         "image": "San-Francisco",
-    ],
+        ],
     [
         "title": "Sydney",
         "image": "Sydney",
-    ],
+        ],
     [
         "title": "New York",
         "image": "New-York",
+        ]
+]
+
+let spots =  [
+    [
+        "title": "Edinburgh Zoo",
+        "caption" : "4 of your friends like this spot",
+        "body" : "Edinburgh Zoo, formerly the Scottish National Zoological Park, is an 82-acre (33 ha) non-profit zoological park in Edinburgh, the capital of Scotland. The land lies on the south facing slopes of Corstorphine Hill, from which it provides extensive views of the city.",
+        "image": "Edinburgh-Zoo"
+    ],
+    [
+        "title": "Edinburgh Castle",
+        "caption" : "4 of your friends like this spot",
+        "body" : "Edinburgh Castle is a historic fortress which dominates the skyline of the city of Edinburgh, Scotland, from its position on the Castle Rock. Archaeologists have established human occupation of the rock since at least the Iron Age (2nd century AD), although the nature of the early settlement is unclear.",
+        "image": "Edinburgh-Castle"
+    ],
+    [
+        "title": "Our Dynamic Earth",
+        "caption" : "4 of your friends like this spot",
+        "body" : "Dynamic Earth is a visitor attraction in Edinburgh, and also functions as a conference venue. It is in the Holyrood area, beside the Scottish Parliament building and at the foot of Arthur's Seat.",
+        "image": "Dynamic-Earth"
+    ],
+    [
+        "title": "Camera Obscura",
+        "caption" : "4 of your friends like this spot",
+        "body" : "Camera Obscura and World of Illusions is a major tourist attraction in the Old Town, Edinburgh, Scotland. Founded by entrepreneur Maria Theresa Short in 1835 and a key site in Patrick Geddes development of regional planning, it is located on the Castlehill section of the Royal Mile next to Edinburgh Castle.",
+        "image": "Camera-Obscura"
+    ],
+    [
+        "title": "Museum of Scotland",
+        "caption" : "4 of your friends like this spot",
+        "body" : "The National Museum of Scotland, Edinburgh, Scotland, was formed in 2006 with the merger of the new Museum of Scotland, with collections relating to Scottish antiquities, culture and history, and the adjacent Royal Museum (so renamed in 1995), with collections covering science and technology, natural history, and world cultures. ",
+        "image": "Museum-Scotland"
     ]
 ]
+
+let continents = [
+    [
+        "option" : "Asia"
+    ],
+    [
+        "option" : "Africa"
+    ],
+    [
+        "option" : "North America"
+    ],
+    [
+        "option" : "South America"
+    ],
+    [
+        "option" : "Antarctica"
+    ],
+    [
+        "option" : "Europe"
+    ],
+    [
+        "option" : "Australia"
+    ]
+]
+
+let features = [
+    [
+        "option" : "Mountains"
+    ],
+    [
+        "option" : "Sea"
+    ],
+    [
+        "option" : "Old town"
+    ],
+    [
+        "option" : "Monuments"
+    ],
+    [
+        "option" : "Museum"
+    ],
+    [
+        "option" : "Castle"
+    ]
+]
+
+
 

@@ -36,6 +36,11 @@ class ExploreViewController: UIViewController {
         self.view.endEditing(false)
     }
     
+    
+    @IBAction func filterButtonTapped(_ sender: UIButton) {
+        performSegue(withIdentifier: "EXPLORE_FILTER", sender: nil)
+    }
+    
 }
 
 extension ExploreViewController: UICollectionViewDelegate, UICollectionViewDataSource {

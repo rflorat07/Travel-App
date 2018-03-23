@@ -24,6 +24,13 @@ class ProfileViewController: UIViewController {
         tripsCollectionView.delegate = self
         tripsCollectionView.dataSource = self
     }
+    
+    
+    @IBAction func profileEditButtonTapped(_ sender: UIButton) {
+        performSegue(withIdentifier: "PROFILE_EDIT", sender:nil )
+    }
+    
+
 }
 
 extension ProfileViewController: UIScrollViewDelegate {
@@ -34,9 +41,9 @@ extension ProfileViewController: UIScrollViewDelegate {
  
         if offsetY < 0 {
             coverProfileView.transform = CGAffineTransform(translationX: 0, y: offsetY)
-            coverImageView.transform = CGAffineTransform(translationX: 0, y: -offsetY/5)
-            navTitleLabel.transform = CGAffineTransform(translationX: 0, y: -offsetY/50)
-            avatarView.transform = CGAffineTransform(translationX: 0, y: -offsetY/50)
+            coverImageView.transform = CGAffineTransform(translationX: 0, y: -offsetY/10)
+            navTitleLabel.transform = CGAffineTransform(translationX: 0, y: offsetY)
+            avatarView.transform = CGAffineTransform(translationX: 0, y: offsetY)
         } 
     }
     
