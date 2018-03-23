@@ -12,7 +12,8 @@ class FiltersViewController: UIViewController {
 
     @IBOutlet weak var featuresCollectionView: UICollectionView!
     @IBOutlet weak var continentCollectionView: UICollectionView!
-
+    @IBOutlet weak var distanceLabel: UILabel!
+    @IBOutlet weak var distanceSlider: UISlider!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,9 +23,15 @@ class FiltersViewController: UIViewController {
         
         continentCollectionView.delegate = self
         continentCollectionView.dataSource = self
+        
+        distanceLabel.text = "\(distanceSlider.value)km"
     }
 
-
+    
+    @IBAction func distanceChangedSlider(_ sender: UISlider) {
+        distanceLabel.text = "\(distanceSlider.value)km"
+    }
+    
     @IBAction func closeFilterButtonTapped(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
     }
