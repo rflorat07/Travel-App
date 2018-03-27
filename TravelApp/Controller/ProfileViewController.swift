@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class ProfileViewController: UIViewController {
     
@@ -16,6 +17,7 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var avatarView: UIView!
     @IBOutlet weak var coverImageView: UIImageView!
     @IBOutlet weak var tripsCollectionView: UICollectionView!
+    @IBOutlet weak var signOutButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +25,7 @@ class ProfileViewController: UIViewController {
         scrollView.delegate = self
         tripsCollectionView.delegate = self
         tripsCollectionView.dataSource = self
+    
     }
     
     
@@ -30,7 +33,37 @@ class ProfileViewController: UIViewController {
         performSegue(withIdentifier: "PROFILE_EDIT", sender:nil )
     }
     
-
+    
+    @IBAction func signOutButtonTapped(_ sender: UIButton) {
+        
+        let logoutPopup = UIAlertController(title: "Logout?", message: "Are you sure you want to logout?", preferredStyle: .alert)
+        
+        let logoutAction = UIAlertAction(title: "Logout?", style: .destructive) { (buttonTapped) in
+            
+            do {
+                try Auth.auth().signOut()
+                
+                let splashVC = self.storyboard?.instantiateViewController(withIdentifier: "SplashViewController") as? SplashViewController
+                
+                splashVC?.modalPresentationStyle = .overFullScreen
+                splashVC?.modalTransitionStyle = .crossDissolve
+                
+                self.present(splashVC!, animated: true, completion: nil)
+                
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        
+        logoutPopup.addAction(cancelAction)
+        logoutPopup.addAction(logoutAction)
+        
+        self.present(logoutPopup, animated: true, completion: nil)
+    }
+    
+    
 }
 
 extension ProfileViewController: UIScrollViewDelegate {
@@ -38,12 +71,13 @@ extension ProfileViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         
         let offsetY = scrollView.contentOffset.y
- 
+        
         if offsetY < 0 {
+            avatarView.transform = CGAffineTransform(translationX: 0, y: offsetY)
+            navTitleLabel.transform = CGAffineTransform(translationX: 0, y: offsetY)
+            signOutButton.transform = CGAffineTransform(translationX: 0, y: offsetY)
             coverProfileView.transform = CGAffineTransform(translationX: 0, y: offsetY)
             coverImageView.transform = CGAffineTransform(translationX: 0, y: -offsetY/10)
-            navTitleLabel.transform = CGAffineTransform(translationX: 0, y: offsetY)
-            avatarView.transform = CGAffineTransform(translationX: 0, y: offsetY)
         } 
     }
     

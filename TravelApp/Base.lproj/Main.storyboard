@@ -28,7 +28,7 @@
         <!--Splash View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" userLabel="Splash View Controller" customClass="SplashViewController" customModule="TravelApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SplashViewController" id="BYZ-38-t0r" userLabel="Splash View Controller" customClass="SplashViewController" customModule="TravelApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -148,7 +148,7 @@
                                                     <constraint firstAttribute="height" constant="50" id="Gum-gh-1Z1"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                <state key="normal" title="Log In">
+                                                <state key="normal" title="Create account">
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
@@ -156,6 +156,9 @@
                                                         <real key="value" value="8"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="createAccountTapped:" destination="fPE-CH-IPN" eventType="touchUpInside" id="wet-4I-Yq2"/>
+                                                </connections>
                                             </button>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="TeT-w7-UV3">
                                                 <rect key="frame" x="20" y="65.5" width="285" height="245"/>
@@ -419,6 +422,10 @@
                         <viewLayoutGuide key="safeArea" id="m7P-8D-qjH"/>
                     </view>
                     <connections>
+                        <outlet property="emailTextField" destination="C6N-cP-HHp" id="wN7-5m-pcr"/>
+                        <outlet property="passwordTextField" destination="2Bu-3G-tuH" id="BD1-B1-Lx1"/>
+                        <outlet property="rePasswordTextField" destination="Xv2-Fo-zDk" id="hSn-bB-VlK"/>
+                        <outlet property="usernameTextField" destination="e9E-gB-MJP" id="4SX-L9-E6g"/>
                         <outlet property="viewController" destination="jPw-Yr-XvZ" id="fZh-4g-gOo"/>
                     </connections>
                 </viewController>
@@ -1515,7 +1522,7 @@
         <!--Login View Controller-->
         <scene sceneID="aad-KW-noZ">
             <objects>
-                <viewController id="Ncr-OW-NRo" userLabel="Login View Controller" customClass="LoginViewController" customModule="TravelApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="Ncr-OW-NRo" userLabel="Login View Controller" customClass="LoginViewController" customModule="TravelApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ipE-37-hal">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1554,15 +1561,15 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t9j-oL-48A" userLabel="Username View" customClass="DesignableView" customModule="Spring">
                                                 <rect key="frame" x="20" y="65.5" width="285" height="50"/>
                                                 <subviews>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="man" translatesAutoresizingMaskIntoConstraints="NO" id="MCG-oo-NdI">
-                                                        <rect key="frame" x="13" y="19" width="10" height="12"/>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="email" translatesAutoresizingMaskIntoConstraints="NO" id="MCG-oo-NdI">
+                                                        <rect key="frame" x="13" y="19" width="14" height="12"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="12" id="Kl0-vU-XTw"/>
-                                                            <constraint firstAttribute="width" constant="10" id="gkk-DS-weq"/>
+                                                            <constraint firstAttribute="width" constant="14" id="gkk-DS-weq"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6zI-HS-tMs" userLabel="Username Text Field">
-                                                        <rect key="frame" x="38" y="0.0" width="235" height="50"/>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="E-mail" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6zI-HS-tMs" userLabel="Email Text Field">
+                                                        <rect key="frame" x="42" y="0.0" width="231" height="50"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="50" id="ZzH-09-G4W"/>
                                                         </constraints>
@@ -1737,6 +1744,8 @@
                         <viewLayoutGuide key="safeArea" id="WtR-lb-hRP"/>
                     </view>
                     <connections>
+                        <outlet property="emailTextField" destination="6zI-HS-tMs" id="Ak0-3F-6Mn"/>
+                        <outlet property="passwordTextField" destination="iy9-q6-RhS" id="SgG-pY-FYI"/>
                         <outlet property="viewController" destination="ipE-37-hal" id="0Nz-KU-8dh"/>
                         <segue destination="hzA-Ni-nHW" kind="presentation" identifier="LOGIN_TO_MAIN" modalPresentationStyle="overFullScreen" modalTransitionStyle="crossDissolve" id="wq1-XL-4KP"/>
                     </connections>
@@ -1748,7 +1757,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="xCG-IE-wQx">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="hzA-Ni-nHW" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="MainView" automaticallyAdjustsScrollViewInsets="NO" id="hzA-Ni-nHW" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleAspectFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="ulI-3r-9aA">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
@@ -2132,13 +2141,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Explore" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6A7-uk-64r" userLabel="Explore Label">
-                                <rect key="frame" x="161" y="37" width="54" height="19"/>
+                                <rect key="frame" x="159" y="37" width="58.5" height="21.5"/>
                                 <fontDescription key="fontDescription" name="RobotoSlab-Bold" family="Roboto Slab" pointSize="16"/>
                                 <color key="textColor" red="0.1960784314" green="0.23137254900000001" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UaX-uq-oXa" userLabel="Filter Button">
-                                <rect key="frame" x="332" y="37.5" width="18" height="17"/>
+                                <rect key="frame" x="332" y="39" width="18" height="17"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="18" id="5a4-rv-hJi"/>
                                     <constraint firstAttribute="height" constant="17" id="Sgf-2y-tsu"/>
@@ -2149,7 +2158,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Filters" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xdd-Yv-QC7" userLabel="Filter Label">
-                                <rect key="frame" x="25" y="76.5" width="325" height="24"/>
+                                <rect key="frame" x="25" y="79" width="325" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="MIy-pR-051"/>
                                 </constraints>
@@ -2158,7 +2167,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iuT-6V-HUL" userLabel="Continent View">
-                                <rect key="frame" x="0.0" y="121.5" width="375" height="70"/>
+                                <rect key="frame" x="0.0" y="124" width="375" height="70"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Continent" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kJI-4D-1rZ" userLabel="Continent Label">
                                         <rect key="frame" x="25" y="0.0" width="325" height="20"/>
@@ -2193,7 +2202,7 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="75" height="40"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Asia" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9tE-3C-0nI" userLabel="Europe Label">
-                                                                    <rect key="frame" x="23" y="13.5" width="30" height="14"/>
+                                                                    <rect key="frame" x="23" y="12.5" width="30" height="16"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="30" id="Qal-fT-6ak"/>
                                                                     </constraints>
@@ -2242,7 +2251,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OYq-Hd-N91" userLabel="Features  View">
-                                <rect key="frame" x="0.0" y="221.5" width="375" height="70"/>
+                                <rect key="frame" x="0.0" y="224" width="375" height="70"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Features" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lnf-Tt-I5k" userLabel="Features Label">
                                         <rect key="frame" x="25" y="0.0" width="325" height="20"/>
@@ -2277,7 +2286,7 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="75" height="40"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mountains" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hTV-Jv-iQ3" userLabel="Mountains Label">
-                                                                    <rect key="frame" x="9.5" y="13.5" width="56.5" height="14"/>
+                                                                    <rect key="frame" x="7" y="12.5" width="62" height="16"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="30" id="KO5-OZ-9mn"/>
                                                                     </constraints>
@@ -2327,7 +2336,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f7b-PL-sH9" userLabel="Distance View">
-                                <rect key="frame" x="0.0" y="321.5" width="375" height="94"/>
+                                <rect key="frame" x="0.0" y="324" width="375" height="94"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lLD-Bt-A0v" userLabel="Distance Label">
                                         <rect key="frame" x="25" y="0.0" width="325" height="20"/>
@@ -2360,10 +2369,10 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="8Ny-Vc-ZLI">
-                                        <rect key="frame" x="25" y="79" width="325" height="14"/>
+                                        <rect key="frame" x="25" y="79" width="325" height="16"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distance range: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VRJ-Y7-mcs" userLabel="Distance Label">
-                                                <rect key="frame" x="0.0" y="0.0" width="92" height="14"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="92" height="16"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="92" id="D73-ka-XxS"/>
                                                 </constraints>
@@ -2372,7 +2381,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" 1,000km - 7,500km" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DFl-XD-YJq" userLabel="Range km Label">
-                                                <rect key="frame" x="92" y="0.0" width="233" height="14"/>
+                                                <rect key="frame" x="92" y="0.0" width="233" height="16"/>
                                                 <fontDescription key="fontDescription" name="RobotoSlab-Bold" family="Roboto Slab" pointSize="12"/>
                                                 <color key="textColor" red="0.1960784314" green="0.23137254900000001" blue="0.27058823529999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -2409,7 +2418,7 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="qVP-dN-sAq" userLabel="Button Stack View">
-                                <rect key="frame" x="25" y="556.5" width="325" height="101"/>
+                                <rect key="frame" x="25" y="559" width="325" height="101"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aPo-lx-gS5" userLabel="Filter Button" customClass="DesignableButton" customModule="Spring">
                                         <rect key="frame" x="0.0" y="0.0" width="325" height="50"/>
@@ -2849,6 +2858,13 @@
                                             <constraint firstAttribute="height" constant="40" id="smH-yY-vUB"/>
                                         </constraints>
                                     </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="trl-yt-aMq" userLabel="signOut Button">
+                                        <rect key="frame" x="334" y="36" width="16" height="22"/>
+                                        <state key="normal" image="logout"/>
+                                        <connections>
+                                            <action selector="signOutButtonTapped:" destination="kHN-mO-zX0" eventType="touchUpInside" id="Bs6-Al-HKy"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="dGJ-8b-guB" firstAttribute="leading" secondItem="4k2-CO-Ajq" secondAttribute="leading" id="2HP-QR-gn2"/>
@@ -2857,6 +2873,7 @@
                                     <constraint firstItem="1NI-2B-ROG" firstAttribute="leading" secondItem="5ds-fm-66A" secondAttribute="leading" id="8HB-3Y-Rgd"/>
                                     <constraint firstItem="ncn-XE-cyL" firstAttribute="centerX" secondItem="I1J-17-QJw" secondAttribute="centerX" id="9GZ-cz-Iky"/>
                                     <constraint firstItem="5ds-fm-66A" firstAttribute="top" secondItem="ncn-XE-cyL" secondAttribute="bottom" constant="60" id="AB6-Oo-GVI"/>
+                                    <constraint firstItem="trl-yt-aMq" firstAttribute="centerY" secondItem="WFl-OU-Y1v" secondAttribute="centerY" id="DI2-fg-GaR"/>
                                     <constraint firstItem="ncn-XE-cyL" firstAttribute="leading" secondItem="4k2-CO-Ajq" secondAttribute="leading" constant="25" id="FJz-d9-MLp"/>
                                     <constraint firstItem="ncn-XE-cyL" firstAttribute="leading" secondItem="1NI-2B-ROG" secondAttribute="leading" id="GG5-8P-n7R"/>
                                     <constraint firstItem="5ds-fm-66A" firstAttribute="top" secondItem="1NI-2B-ROG" secondAttribute="bottom" constant="8" id="HLW-9H-s2r"/>
@@ -2864,6 +2881,7 @@
                                     <constraint firstAttribute="trailing" secondItem="dGJ-8b-guB" secondAttribute="trailing" id="LXL-UT-gnQ"/>
                                     <constraint firstAttribute="trailing" secondItem="O0f-oS-460" secondAttribute="trailing" constant="25" id="OGQ-Hg-b0Y"/>
                                     <constraint firstItem="4B6-uY-Gg3" firstAttribute="leading" secondItem="dGJ-8b-guB" secondAttribute="leading" id="Qnw-aP-vOG"/>
+                                    <constraint firstAttribute="trailing" secondItem="trl-yt-aMq" secondAttribute="trailing" constant="25" id="UB5-6k-bUh"/>
                                     <constraint firstItem="ncn-XE-cyL" firstAttribute="trailing" secondItem="5ds-fm-66A" secondAttribute="trailing" id="Vdp-xW-Tko"/>
                                     <constraint firstItem="TNi-Jp-qOe" firstAttribute="centerX" secondItem="BWu-mE-78f" secondAttribute="centerX" id="ZLE-pe-tti"/>
                                     <constraint firstItem="TNi-Jp-qOe" firstAttribute="top" secondItem="U9C-6D-bSN" secondAttribute="bottom" constant="17" id="dTb-Rb-Xye"/>
@@ -2904,6 +2922,7 @@
                         <outlet property="coverProfileView" destination="dGJ-8b-guB" id="1f0-L9-SAS"/>
                         <outlet property="navTitleLabel" destination="WFl-OU-Y1v" id="E6g-b7-B9i"/>
                         <outlet property="scrollView" destination="4k2-CO-Ajq" id="lhU-yU-DPI"/>
+                        <outlet property="signOutButton" destination="trl-yt-aMq" id="tU0-h6-eZH"/>
                         <outlet property="tripsCollectionView" destination="4B6-uY-Gg3" id="L7T-Mz-DN3"/>
                         <segue destination="9Hp-Z7-7g4" kind="presentation" identifier="PROFILE_EDIT" modalPresentationStyle="overFullScreen" modalTransitionStyle="crossDissolve" id="zyN-fd-9lk"/>
                     </connections>
@@ -3399,6 +3418,7 @@
         <image name="like" width="24" height="21"/>
         <image name="like-black" width="14" height="12"/>
         <image name="localisation" width="9" height="12"/>
+        <image name="logout" width="16" height="16"/>
         <image name="man" width="10" height="12"/>
         <image name="padlock" width="9" height="11"/>
         <image name="send" width="20" height="21"/>

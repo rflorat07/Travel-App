@@ -35,6 +35,12 @@
 		4F9A1C1B205A903C002663EF /* ActivityYouTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F9A1C19205A903C002663EF /* ActivityYouTableViewCell.xib */; };
 		4F9A1C1D205ADEA1002663EF /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9A1C1C205ADEA1002663EF /* ProfileViewController.swift */; };
 		4F9C0A4A20567E1F00017A55 /* SpotCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9C0A4920567E1F00017A55 /* SpotCollectionViewCell.swift */; };
+		4F9C950F2068DBF1007F6AD3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4F9C950E2068DBF1007F6AD3 /* GoogleService-Info.plist */; };
+		4F9C95122068DFC9007F6AD3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9C95112068DFC9007F6AD3 /* Constants.swift */; };
+		4F9C95142068E5DF007F6AD3 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9C95132068E5DF007F6AD3 /* AuthService.swift */; };
+		4F9C95162069002D007F6AD3 /* UtilitiesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9C95152069002D007F6AD3 /* UtilitiesService.swift */; };
+		4F9C951820690AA1007F6AD3 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9C951720690AA1007F6AD3 /* DataService.swift */; };
+		4F9C951A20694E12007F6AD3 /* LoaderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9C951920694E12007F6AD3 /* LoaderController.swift */; };
 		4FB07916205BBC9F001ABC55 /* ProfileTripsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB07915205BBC9F001ABC55 /* ProfileTripsCollectionViewCell.swift */; };
 		4FD814FA204FF3D900AE40B6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD814F9204FF3D900AE40B6 /* LoginViewController.swift */; };
 		4FD814FC204FF66600AE40B6 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD814FB204FF66600AE40B6 /* RegisterViewController.swift */; };
@@ -78,6 +84,12 @@
 		4F9A1C19205A903C002663EF /* ActivityYouTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActivityYouTableViewCell.xib; sourceTree = "<group>"; };
 		4F9A1C1C205ADEA1002663EF /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		4F9C0A4920567E1F00017A55 /* SpotCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotCollectionViewCell.swift; sourceTree = "<group>"; };
+		4F9C950E2068DBF1007F6AD3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		4F9C95112068DFC9007F6AD3 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		4F9C95132068E5DF007F6AD3 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		4F9C95152069002D007F6AD3 /* UtilitiesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilitiesService.swift; sourceTree = "<group>"; };
+		4F9C951720690AA1007F6AD3 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		4F9C951920694E12007F6AD3 /* LoaderController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderController.swift; sourceTree = "<group>"; };
 		4FB07915205BBC9F001ABC55 /* ProfileTripsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTripsCollectionViewCell.swift; sourceTree = "<group>"; };
 		4FD814F9204FF3D900AE40B6 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		4FD814FB204FF66600AE40B6 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
@@ -138,9 +150,11 @@
 				4F9A1C01205A6C59002663EF /* Fonts */,
 				4FD814FF205029AC00AE40B6 /* View */,
 				4FA68BF5204FE899000CA9AA /* Controller */,
+				4F9C95102068DE3D007F6AD3 /* Services */,
 				4FD844B020512EC9003DCAC3 /* Utilities */,
 				4F1F63DE204EDA0800148499 /* AppDelegate.swift */,
 				4F1F63EA204EDA0800148499 /* Info.plist */,
+				4F9C950E2068DBF1007F6AD3 /* GoogleService-Info.plist */,
 				4F1F63E5204EDA0800148499 /* Assets.xcassets */,
 				4F1F63E2204EDA0800148499 /* Main.storyboard */,
 				4F1F63E7204EDA0800148499 /* LaunchScreen.storyboard */,
@@ -165,6 +179,16 @@
 				4F9A1C19205A903C002663EF /* ActivityYouTableViewCell.xib */,
 			);
 			path = Xibs;
+			sourceTree = "<group>";
+		};
+		4F9C95102068DE3D007F6AD3 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				4F9C95132068E5DF007F6AD3 /* AuthService.swift */,
+				4F9C95152069002D007F6AD3 /* UtilitiesService.swift */,
+				4F9C951720690AA1007F6AD3 /* DataService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		4FA68BF5204FE899000CA9AA /* Controller */ = {
@@ -212,6 +236,8 @@
 			children = (
 				4FD844B120512F14003DCAC3 /* Data.swift */,
 				4F723E7E2063BC73009FB43B /* UISwitchCustom.swift */,
+				4F9C95112068DFC9007F6AD3 /* Constants.swift */,
+				4F9C951920694E12007F6AD3 /* LoaderController.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -288,6 +314,7 @@
 			files = (
 				4F9A1C08205A6CAD002663EF /* RobotoSlab-Regular.ttf in Resources */,
 				4F9A1C06205A6CAD002663EF /* RobotoSlab-Bold.ttf in Resources */,
+				4F9C950F2068DBF1007F6AD3 /* GoogleService-Info.plist in Resources */,
 				4F9A1C1B205A903C002663EF /* ActivityYouTableViewCell.xib in Resources */,
 				4F9A1C09205A6CAD002663EF /* RobotoSlab-Thin.ttf in Resources */,
 				4F9A1C07205A6CAD002663EF /* RobotoSlab-Light.ttf in Resources */,
@@ -341,14 +368,22 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-TravelApp/Pods-TravelApp-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AnimatedCollectionViewLayout/AnimatedCollectionViewLayout.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/Spring/Spring.framework",
 				"${BUILT_PRODUCTS_DIR}/XLPagerTabStrip/XLPagerTabStrip.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AnimatedCollectionViewLayout.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Spring.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XLPagerTabStrip.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -363,13 +398,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				4FD844B220512F14003DCAC3 /* Data.swift in Sources */,
+				4F9C95142068E5DF007F6AD3 /* AuthService.swift in Sources */,
 				4FD814FA204FF3D900AE40B6 /* LoginViewController.swift in Sources */,
 				4FD81501205029D600AE40B6 /* CountryCollectionViewCell.swift in Sources */,
 				4F9C0A4A20567E1F00017A55 /* SpotCollectionViewCell.swift in Sources */,
 				4F723E7F2063BC73009FB43B /* UISwitchCustom.swift in Sources */,
+				4F9C95122068DFC9007F6AD3 /* Constants.swift in Sources */,
 				4F723E8520640650009FB43B /* FiltersViewController.swift in Sources */,
 				4F4FAD0820580A48006D2ADB /* ExploreViewController.swift in Sources */,
 				4F1F63E1204EDA0800148499 /* SplashViewController.swift in Sources */,
+				4F9C951A20694E12007F6AD3 /* LoaderController.swift in Sources */,
 				4F9A1C1A205A903C002663EF /* ActivityYouTableViewCell.swift in Sources */,
 				4FB07916205BBC9F001ABC55 /* ProfileTripsCollectionViewCell.swift in Sources */,
 				4F1F63DF204EDA0800148499 /* AppDelegate.swift in Sources */,
@@ -387,9 +425,11 @@
 				4FD814FE205028E900AE40B6 /* MainViewController.swift in Sources */,
 				4F723E832063F1CA009FB43B /* FeaturesCollectionViewCell.swift in Sources */,
 				4F723E812063F086009FB43B /* ContinentCollectionViewCell.swift in Sources */,
+				4F9C951820690AA1007F6AD3 /* DataService.swift in Sources */,
 				4F723E7D2063B3E1009FB43B /* ProfileEditViewController.swift in Sources */,
 				4F9A1C1D205ADEA1002663EF /* ProfileViewController.swift in Sources */,
 				4FECEF282056E2CC008006D9 /* NewsPhotoCollectionViewCell.swift in Sources */,
+				4F9C95162069002D007F6AD3 /* UtilitiesService.swift in Sources */,
 				4F619F54205198660020DAB5 /* CountryInfoCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
