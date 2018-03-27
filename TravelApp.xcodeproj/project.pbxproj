@@ -40,7 +40,7 @@
 		4F9C95142068E5DF007F6AD3 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9C95132068E5DF007F6AD3 /* AuthService.swift */; };
 		4F9C95162069002D007F6AD3 /* UtilitiesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9C95152069002D007F6AD3 /* UtilitiesService.swift */; };
 		4F9C951820690AA1007F6AD3 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9C951720690AA1007F6AD3 /* DataService.swift */; };
-		4F9C951A20694E12007F6AD3 /* LoaderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9C951920694E12007F6AD3 /* LoaderController.swift */; };
+		4F9C951A20694E12007F6AD3 /* LoadingIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9C951920694E12007F6AD3 /* LoadingIndicatorView.swift */; };
 		4FB07916205BBC9F001ABC55 /* ProfileTripsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB07915205BBC9F001ABC55 /* ProfileTripsCollectionViewCell.swift */; };
 		4FD814FA204FF3D900AE40B6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD814F9204FF3D900AE40B6 /* LoginViewController.swift */; };
 		4FD814FC204FF66600AE40B6 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD814FB204FF66600AE40B6 /* RegisterViewController.swift */; };
@@ -89,7 +89,7 @@
 		4F9C95132068E5DF007F6AD3 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		4F9C95152069002D007F6AD3 /* UtilitiesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilitiesService.swift; sourceTree = "<group>"; };
 		4F9C951720690AA1007F6AD3 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
-		4F9C951920694E12007F6AD3 /* LoaderController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderController.swift; sourceTree = "<group>"; };
+		4F9C951920694E12007F6AD3 /* LoadingIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingIndicatorView.swift; sourceTree = "<group>"; };
 		4FB07915205BBC9F001ABC55 /* ProfileTripsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTripsCollectionViewCell.swift; sourceTree = "<group>"; };
 		4FD814F9204FF3D900AE40B6 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		4FD814FB204FF66600AE40B6 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
@@ -237,7 +237,7 @@
 				4FD844B120512F14003DCAC3 /* Data.swift */,
 				4F723E7E2063BC73009FB43B /* UISwitchCustom.swift */,
 				4F9C95112068DFC9007F6AD3 /* Constants.swift */,
-				4F9C951920694E12007F6AD3 /* LoaderController.swift */,
+				4F9C951920694E12007F6AD3 /* LoadingIndicatorView.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -407,7 +407,7 @@
 				4F723E8520640650009FB43B /* FiltersViewController.swift in Sources */,
 				4F4FAD0820580A48006D2ADB /* ExploreViewController.swift in Sources */,
 				4F1F63E1204EDA0800148499 /* SplashViewController.swift in Sources */,
-				4F9C951A20694E12007F6AD3 /* LoaderController.swift in Sources */,
+				4F9C951A20694E12007F6AD3 /* LoadingIndicatorView.swift in Sources */,
 				4F9A1C1A205A903C002663EF /* ActivityYouTableViewCell.swift in Sources */,
 				4FB07916205BBC9F001ABC55 /* ProfileTripsCollectionViewCell.swift in Sources */,
 				4F1F63DF204EDA0800148499 /* AppDelegate.swift in Sources */,

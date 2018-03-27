@@ -28,21 +28,22 @@ class LoginViewController: UIViewController {
     
     @IBAction func loginButtonTapped(_ sender: UIButton) {
         
-        showActivityIndicator()
+        LoadingIndicatorView.show("Loading")
         
         if emailTextField.text != nil && passwordTextField.text != nil {
             
             AuthService.intance.loginUser(withEmail: emailTextField.text!, andPassword: passwordTextField.text!, loginComplete: { (success, loginError) in
                 
                 if success {
-                    self.dismissActivityIndicator()
+                    LoadingIndicatorView.hide()
                     self.performSegue(withIdentifier: "LOGIN_TO_MAIN", sender: nil)
                 } else {
-                    self.dismissActivityIndicator(loginError: loginError)
+                    LoadingIndicatorView.hide()
+                    self.showAlertController(title: "Error", message: loginError!.localizedDescription)
                 }
             })
         } else {
-            dismissActivityIndicator()
+            LoadingIndicatorView.show("Loading")
         }
     }
     
@@ -66,28 +67,6 @@ class LoginViewController: UIViewController {
         present(alertController, animated: true, completion: nil)
     }
     
-    func showActivityIndicator() {
-        
-        showAlertController = UIAlertController(title: nil, message: "Please wait...", preferredStyle: .alert)
-        
-        activityIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
-        activityIndicator.hidesWhenStopped = true
-        activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
-        activityIndicator.startAnimating();
-        
-        showAlertController.view.addSubview(activityIndicator)
-        
-        present(showAlertController, animated: true, completion: nil)
-        
-    }
-    
-    func dismissActivityIndicator(loginError: Error? = nil) {
-        showAlertController.dismiss(animated: true) {
-            if let error = loginError {
-                self.showAlertController(title: "Error", message: error.localizedDescription)
-            }
-        }
-    }
     
     @objc func dismissView() {
         dismiss(animated: true, completion: nil)
