@@ -369,6 +369,9 @@
                                                 <real key="value" value="8"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="closeButtonTapped:" destination="fPE-CH-IPN" eventType="touchUpInside" id="zek-Ps-vd7"/>
+                                        </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="10" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="thN-Cv-4HZ" userLabel="Separator Stack View">
                                         <rect key="frame" x="25" y="466" width="325" height="20"/>
@@ -1387,7 +1390,7 @@
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="directions" translatesAutoresizingMaskIntoConstraints="NO" id="tYS-eT-4Kj" userLabel="Directions Image View">
                                                         <rect key="frame" x="0.0" y="2.5" width="11" height="11"/>
                                                     </imageView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Get Directions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jg0-fy-d0d">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Get Directions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jg0-fy-d0d">
                                                         <rect key="frame" x="19" y="0.0" width="80.5" height="16"/>
                                                         <fontDescription key="fontDescription" name="RobotoSlab-Bold" family="Roboto Slab" pointSize="12"/>
                                                         <color key="textColor" red="0.19607843137254902" green="0.23137254901960785" blue="0.27058823529411763" alpha="1" colorSpace="calibratedRGB"/>
@@ -1522,7 +1525,7 @@
         <!--Login View Controller-->
         <scene sceneID="aad-KW-noZ">
             <objects>
-                <viewController storyboardIdentifier="LoginViewController" id="Ncr-OW-NRo" userLabel="Login View Controller" customClass="LoginViewController" customModule="TravelApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Ncr-OW-NRo" customClass="LoginViewController" customModule="TravelApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ipE-37-hal">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1710,12 +1713,8 @@
                                                 <real key="value" value="8"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8fP-rr-NzP" userLabel="Close Button">
-                                        <rect key="frame" x="320" y="25" width="30" height="30"/>
-                                        <state key="normal" image="closeButton"/>
                                         <connections>
-                                            <action selector="closeButtonTapped:" destination="Ncr-OW-NRo" eventType="touchUpInside" id="NWE-XM-5cN"/>
+                                            <action selector="closeButtonTapped:" destination="Ncr-OW-NRo" eventType="touchUpInside" id="Alg-pH-u3c"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -1728,9 +1727,7 @@
                                     <constraint firstItem="bPP-QU-9nC" firstAttribute="top" secondItem="9hj-ZK-Mim" secondAttribute="top" constant="177" id="nwv-mZ-8Fd"/>
                                     <constraint firstItem="qrb-pB-4in" firstAttribute="leading" secondItem="9hj-ZK-Mim" secondAttribute="leading" constant="25" id="qiQ-Bf-reO"/>
                                     <constraint firstItem="qrb-pB-4in" firstAttribute="top" secondItem="CMr-ZY-QKg" secondAttribute="bottom" constant="14" id="spb-p4-jVC"/>
-                                    <constraint firstItem="8fP-rr-NzP" firstAttribute="top" secondItem="9hj-ZK-Mim" secondAttribute="top" constant="25" id="tbK-ib-dyZ"/>
                                     <constraint firstAttribute="trailing" secondItem="qrb-pB-4in" secondAttribute="trailing" constant="25" id="w1r-Dc-alA"/>
-                                    <constraint firstAttribute="trailing" secondItem="8fP-rr-NzP" secondAttribute="trailing" constant="25" id="x1Z-QP-cMT"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -2008,7 +2005,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Explore" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gr1-rj-WGz" userLabel="Explore Label">
-                                <rect key="frame" x="159" y="37" width="58.5" height="21.5"/>
+                                <rect key="frame" x="158.5" y="37" width="58.5" height="21.5"/>
                                 <fontDescription key="fontDescription" name="RobotoSlab-Bold" family="Roboto Slab" pointSize="16"/>
                                 <color key="textColor" red="0.19607843137254902" green="0.23137254901960785" blue="0.27058823529411763" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -2141,7 +2138,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Explore" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6A7-uk-64r" userLabel="Explore Label">
-                                <rect key="frame" x="159" y="37" width="58.5" height="21.5"/>
+                                <rect key="frame" x="158.5" y="37" width="58.5" height="21.5"/>
                                 <fontDescription key="fontDescription" name="RobotoSlab-Bold" family="Roboto Slab" pointSize="16"/>
                                 <color key="textColor" red="0.1960784314" green="0.23137254900000001" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -3407,7 +3404,6 @@
         <image name="Venice" width="325" height="150"/>
         <image name="arrow-right" width="32" height="14"/>
         <image name="back" width="32" height="14"/>
-        <image name="closeButton" width="30" height="30"/>
         <image name="cover-profile" width="375" height="185"/>
         <image name="directions" width="11" height="11"/>
         <image name="down" width="12" height="7"/>

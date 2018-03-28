@@ -23,7 +23,7 @@ class CityViewController: UIViewController {
     @IBOutlet weak var spotCollectionView: UICollectionView!
     
     
-    var city : [String: String]!
+    var city : City!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,9 +40,9 @@ class CityViewController: UIViewController {
     }
     
     func loadViewData() {
-        cityLabel.text = city["title"]
-        bodyLabel.text = city["body"]
-        coverImageView.image = UIImage(named: city["image"]!)
+        cityLabel.text = city.cityTitle
+        bodyLabel.text = city.cityBody
+        coverImageView.image = UIImage(named: city.cityImage)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

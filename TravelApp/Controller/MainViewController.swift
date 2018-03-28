@@ -14,6 +14,8 @@ class MainViewController: UIViewController {
     @IBOutlet weak var countryView: UIView!
     @IBOutlet weak var countryCollectionView: UICollectionView!
     
+    var countriesArray = [Country]()
+    
     /// animator, clipToBounds, row, column
     var  animator: (LayoutAttributesAnimator, Bool, Int, Int)!
     var  direction: UICollectionViewScrollDirection = .horizontal
@@ -24,14 +26,26 @@ class MainViewController: UIViewController {
         countryCollectionView.delegate = self
         countryCollectionView.dataSource = self
         
-        settingAnimatedCollectionView()
         changeTabBarAndStatusBarStyle()
+        
+        LoadingIndicatorView.show("Loading")
+        
+        DataService.instance.getAllCountries { (returnedCountriesArray) in
+            
+            self.countriesArray = returnedCountriesArray
+            self.countryCollectionView.reloadData()
+            self.settingAnimatedCollectionView()
+            
+            LoadingIndicatorView.hide()
+        }
         
     }
     
-    
     override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
         changeTabBarAndStatusBarStyle()
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -50,7 +64,7 @@ class MainViewController: UIViewController {
             
             let toViewController = segue.destination as! CountryViewController
             let indexPath = sender as! IndexPath
-            let country = countries[indexPath.row]
+            let country = countriesArray[indexPath.row]
             
             toViewController.country = country
         }
@@ -68,9 +82,9 @@ class MainViewController: UIViewController {
         layout.estimatedItemSize = CGSize( width: 259, height: 390)
         countryCollectionView.collectionViewLayout = layout
         
-        if countries.count > 1 {
+      /*  if countriesArray.count > 1 {
             countryCollectionView.scrollToItem(at: IndexPath(item: 1, section: 0), at: .centeredHorizontally, animated: true)
-        }
+        } */
         
         
     }
@@ -98,27 +112,28 @@ class MainViewController: UIViewController {
 
 extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return countries.count
+        return countriesArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "countryCell", for: indexPath) as! CountryCollectionViewCell
         
-        let country = countries[indexPath.row]
+        let country = countriesArray[indexPath.row]
         
         cell.clipsToBounds = animator.1
         
-        cell.titleLabel.text = (country["title"] as! String)
-        cell.captionLabel.text = (country["caption"] as! String)
-        cell.coverImageView.image = UIImage(named: country["image"]! as! String )
+        cell.titleLabel.text = (country.countryTitle)
+        cell.captionLabel.text = (country.countryCaption)
+        cell.coverImageView.image = UIImage(named: country.countryImage)
         
         return cell
     }
-    
-
-    
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         performSegue(withIdentifier: "COUNTRY", sender: indexPath)

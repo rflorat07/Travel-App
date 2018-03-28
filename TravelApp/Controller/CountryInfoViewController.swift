@@ -16,8 +16,8 @@ class CountryInfoViewController: UIViewController {
     @IBOutlet weak var bodyLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
     
-    var country : [String : Any]!
-    var places : [[String: String]]!
+    var country : Country!
+    var citiesArray = [City]()
   
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,17 +29,28 @@ class CountryInfoViewController: UIViewController {
         
     }
     
-    
     func loadViewData() {
-        titleLabel.text = country["title"] as? String
-        captionLabel.text = country["caption"] as? String
-        bodyLabel.text = country["body"] as? String
+        
+        titleLabel.text = country.countryTitle
+        captionLabel.text = country.countryCaption
+        bodyLabel.text = country.countryBody
+        
+        LoadingIndicatorView.show("Loading")
+        
+        DataService.instance.getAllCities(forUID: country.countryID) { (returnedCitiesArray) in
+            
+            self.citiesArray = returnedCitiesArray
+            self.collectionView.reloadData()
+            
+            LoadingIndicatorView.hide()
+            
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "CITY_INFO" {
             let toViewController = segue.destination as! CityViewController
-            toViewController.city = sender as! [String: String]
+            toViewController.city = sender as! City
         }
     }
     
@@ -54,23 +65,23 @@ class CountryInfoViewController: UIViewController {
 extension CountryInfoViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return places.count
+        return citiesArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "countryInfoCell", for: indexPath) as! CountryInfoCollectionViewCell
         
-        let place = places[indexPath.row]
+        let city = citiesArray[indexPath.row]
         
-        cell.titleLabel.text = place["title"]
-        cell.coverImageView.image = UIImage(named: place["image"]!)
+        cell.titleLabel.text = city.cityTitle
+        cell.coverImageView.image = UIImage(named: city.cityImage)
         
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "CITY_INFO", sender: places[indexPath.row])
+        performSegue(withIdentifier: "CITY_INFO", sender: citiesArray[indexPath.row])
     }
     
     

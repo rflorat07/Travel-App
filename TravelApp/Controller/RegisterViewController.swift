@@ -26,10 +26,35 @@ class RegisterViewController: UIViewController {
         setGestureRecognizer()
     }
     
-    func setGestureRecognizer () {
-        tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissView))
-        viewController.addGestureRecognizer(tapGestureRecognizer)
-        tapGestureRecognizer.delegate = self as? UIGestureRecognizerDelegate
+    
+    @IBAction func createAccountTapped(_ sender: UIButton) {
+        
+        LoadingIndicatorView.show("Loading")
+        
+        if emailTextField.text != nil && passwordTextField.text != nil {
+            
+            AuthService.intance.registerUser(withEmail: self.emailTextField.text!, andPassword: self.passwordTextField.text!, username: self.usernameTextField.text) { (success, registrationError) in
+                
+                if success {
+                    LoadingIndicatorView.hide()
+                    self.dismissView()
+                    
+                } else {
+                    LoadingIndicatorView.hide()
+                    self.showAlertController(title: "Error", message: registrationError!.localizedDescription)
+                }
+                
+            }
+            
+        } else {
+            LoadingIndicatorView.hide()
+        }
+        
+    }
+    
+    
+    @IBAction func closeButtonTapped(_ sender: UIButton) {
+        dismissView()
     }
     
     func showAlertController(title: String, message: String) {
@@ -42,30 +67,10 @@ class RegisterViewController: UIViewController {
         present(alertController, animated: true, completion: nil)
     }
     
-    
-    @IBAction func createAccountTapped(_ sender: UIButton) {
-        
-        if emailTextField.text != nil && passwordTextField.text != nil {
-            
-            AuthService.intance.registerUser(withEmail: self.emailTextField.text!, andPassword: self.passwordTextField.text!, username: self.usernameTextField.text) { (success, registrationError) in
-                
-                if success {
-                    
-                    self.dismissView()
-                    
-                    print("Successfully registered user")
-                    
-                } else {
-                    
-                    print(String(describing: registrationError?.localizedDescription))
-                    
-                    self.showAlertController(title: "Error", message: registrationError!.localizedDescription)
-                }
-                
-            }
-            
-        }
-        
+    func setGestureRecognizer () {
+        tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissView))
+        viewController.addGestureRecognizer(tapGestureRecognizer)
+        tapGestureRecognizer.delegate = self as? UIGestureRecognizerDelegate
     }
     
     @objc func dismissView() {

@@ -15,7 +15,7 @@ class CountryViewController: UIViewController {
     @IBOutlet weak var captionLabel: UILabel!
     @IBOutlet weak var coverImageView: UIImageView!
         
-    var country : [String : Any]!
+    var country : Country!
     var swipeGestureRecognizer : UISwipeGestureRecognizer!
     
     override func viewDidLoad() {
@@ -26,9 +26,9 @@ class CountryViewController: UIViewController {
     }
     
     func loadViewData() {
-        titleLabel.text = country["title"] as? String
-        captionLabel.text = country["caption"] as? String
-        coverImageView.image = UIImage(named: country["image"]! as! String)
+        titleLabel.text = country.countryTitle
+        captionLabel.text = country.countryCaption
+        coverImageView.image = UIImage(named: country.countryImage)
     }
     
     
@@ -36,8 +36,8 @@ class CountryViewController: UIViewController {
         if segue.identifier == "COUNTRY_INFO" {
             let toViewController = segue.destination as! CountryInfoViewController
             
-            toViewController.country = country as [String : Any]
-            toViewController.places = country["places"] as! [[String: String]]
+            toViewController.country = country
+            //toViewController.places = country["places"] as! [[String: String]]
         }
     }
     

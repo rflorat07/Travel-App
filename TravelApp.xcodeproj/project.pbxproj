@@ -25,6 +25,8 @@
 		4F723E812063F086009FB43B /* ContinentCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F723E802063F086009FB43B /* ContinentCollectionViewCell.swift */; };
 		4F723E832063F1CA009FB43B /* FeaturesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F723E822063F1CA009FB43B /* FeaturesCollectionViewCell.swift */; };
 		4F723E8520640650009FB43B /* FiltersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F723E8420640650009FB43B /* FiltersViewController.swift */; };
+		4F780C7B206A84D700F2A1BB /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F780C7A206A84D700F2A1BB /* Country.swift */; };
+		4F780C7D206A9AE800F2A1BB /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F780C7C206A9AE800F2A1BB /* City.swift */; };
 		4F9A1C06205A6CAD002663EF /* RobotoSlab-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4F9A1C02205A6CA7002663EF /* RobotoSlab-Bold.ttf */; };
 		4F9A1C07205A6CAD002663EF /* RobotoSlab-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4F9A1C03205A6CA9002663EF /* RobotoSlab-Light.ttf */; };
 		4F9A1C08205A6CAD002663EF /* RobotoSlab-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4F9A1C04205A6CAA002663EF /* RobotoSlab-Regular.ttf */; };
@@ -74,6 +76,8 @@
 		4F723E802063F086009FB43B /* ContinentCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContinentCollectionViewCell.swift; sourceTree = "<group>"; };
 		4F723E822063F1CA009FB43B /* FeaturesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturesCollectionViewCell.swift; sourceTree = "<group>"; };
 		4F723E8420640650009FB43B /* FiltersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersViewController.swift; sourceTree = "<group>"; };
+		4F780C7A206A84D700F2A1BB /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
+		4F780C7C206A9AE800F2A1BB /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 		4F9A1C02205A6CA7002663EF /* RobotoSlab-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoSlab-Bold.ttf"; sourceTree = "<group>"; };
 		4F9A1C03205A6CA9002663EF /* RobotoSlab-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoSlab-Light.ttf"; sourceTree = "<group>"; };
 		4F9A1C04205A6CAA002663EF /* RobotoSlab-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoSlab-Regular.ttf"; sourceTree = "<group>"; };
@@ -149,6 +153,7 @@
 				4F9A1C0F205A8D7F002663EF /* Xibs */,
 				4F9A1C01205A6C59002663EF /* Fonts */,
 				4FD814FF205029AC00AE40B6 /* View */,
+				4F780C79206A849800F2A1BB /* Model */,
 				4FA68BF5204FE899000CA9AA /* Controller */,
 				4F9C95102068DE3D007F6AD3 /* Services */,
 				4FD844B020512EC9003DCAC3 /* Utilities */,
@@ -160,6 +165,15 @@
 				4F1F63E7204EDA0800148499 /* LaunchScreen.storyboard */,
 			);
 			path = TravelApp;
+			sourceTree = "<group>";
+		};
+		4F780C79206A849800F2A1BB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4F780C7A206A84D700F2A1BB /* Country.swift */,
+				4F780C7C206A9AE800F2A1BB /* City.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		4F9A1C01205A6C59002663EF /* Fonts */ = {
@@ -399,6 +413,7 @@
 			files = (
 				4FD844B220512F14003DCAC3 /* Data.swift in Sources */,
 				4F9C95142068E5DF007F6AD3 /* AuthService.swift in Sources */,
+				4F780C7D206A9AE800F2A1BB /* City.swift in Sources */,
 				4FD814FA204FF3D900AE40B6 /* LoginViewController.swift in Sources */,
 				4FD81501205029D600AE40B6 /* CountryCollectionViewCell.swift in Sources */,
 				4F9C0A4A20567E1F00017A55 /* SpotCollectionViewCell.swift in Sources */,
@@ -425,6 +440,7 @@
 				4FD814FE205028E900AE40B6 /* MainViewController.swift in Sources */,
 				4F723E832063F1CA009FB43B /* FeaturesCollectionViewCell.swift in Sources */,
 				4F723E812063F086009FB43B /* ContinentCollectionViewCell.swift in Sources */,
+				4F780C7B206A84D700F2A1BB /* Country.swift in Sources */,
 				4F9C951820690AA1007F6AD3 /* DataService.swift in Sources */,
 				4F723E7D2063B3E1009FB43B /* ProfileEditViewController.swift in Sources */,
 				4F9A1C1D205ADEA1002663EF /* ProfileViewController.swift in Sources */,

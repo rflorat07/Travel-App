@@ -10,13 +10,10 @@ import UIKit
 
 class LoginViewController: UIViewController {
     
-    
     @IBOutlet var viewController: UIView!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
-    var showAlertController : UIAlertController!
-    var activityIndicator : UIActivityIndicatorView!
     var tapGestureRecognizer : UITapGestureRecognizer!
     
     override func viewDidLoad() {
@@ -43,7 +40,7 @@ class LoginViewController: UIViewController {
                 }
             })
         } else {
-            LoadingIndicatorView.show("Loading")
+            LoadingIndicatorView.hide()
         }
     }
     

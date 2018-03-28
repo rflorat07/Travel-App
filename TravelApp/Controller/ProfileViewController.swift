@@ -40,6 +40,8 @@ class ProfileViewController: UIViewController {
         
         let logoutAction = UIAlertAction(title: "Logout?", style: .destructive) { (buttonTapped) in
             
+            LoadingIndicatorView.show("Loading")
+            
             do {
                 try Auth.auth().signOut()
                 
@@ -48,9 +50,12 @@ class ProfileViewController: UIViewController {
                 splashVC?.modalPresentationStyle = .overFullScreen
                 splashVC?.modalTransitionStyle = .crossDissolve
                 
+                LoadingIndicatorView.hide()
+                
                 self.present(splashVC!, animated: true, completion: nil)
                 
             } catch {
+                LoadingIndicatorView.hide()
                 print(error.localizedDescription)
             }
         }
