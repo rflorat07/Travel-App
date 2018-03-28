@@ -61,7 +61,7 @@ class DataService {
                 let caption = post.childSnapshot(forPath: "caption").value as! String
                 let body = post.childSnapshot(forPath: "body").value as! String
                 let image = post.childSnapshot(forPath: "image").value as! String
-               
+                
                 let post  = Post.init(name: name, avatar: avatar, caption: caption, body: body, image: image)
                 
                 postsArray.append(post)
@@ -121,18 +121,35 @@ class DataService {
         
     }
     
-    func getAllCities(forUID contryID: String, handler: @escaping (_ citiesArray: [City]) -> ()) {
+    func getAllCities(forUID contryID: String?, handler: @escaping (_ citiesArray: [City]) -> ()) {
         
         var citiesArray = [City]()
         
         REF_CITIES.observeSingleEvent(of: .value) { (citySnapshot) in
             guard let citySnapshot = citySnapshot.children.allObjects as? [DataSnapshot] else { return }
             
-            for city in citySnapshot {
+            if let contryID = contryID {
                 
-                let cityUID = city.childSnapshot(forPath: "uid").value as! String
+                for city in citySnapshot {
+                    
+                    let cityUID = city.childSnapshot(forPath: "uid").value as! String
+                    
+                    if contryID == cityUID {
+                        let title = city.childSnapshot(forPath: "title").value as! String
+                        let body = city.childSnapshot(forPath: "body").value as! String
+                        let image = city.childSnapshot(forPath: "image").value as! String
+                        let city = City(uid: cityUID, title: title, body: body, image: image)
+                        
+                        citiesArray.append(city)
+                    }
+                }
                 
-                if contryID == cityUID {
+                
+            } else {
+                
+                for city in citySnapshot {
+                    
+                    let cityUID = city.childSnapshot(forPath: "uid").value as! String
                     let title = city.childSnapshot(forPath: "title").value as! String
                     let body = city.childSnapshot(forPath: "body").value as! String
                     let image = city.childSnapshot(forPath: "image").value as! String
@@ -140,12 +157,10 @@ class DataService {
                     
                     citiesArray.append(city)
                 }
-                
             }
             
             handler(citiesArray)
         }
-        
     }
     
 }
@@ -153,7 +168,25 @@ class DataService {
 extension DataService {
     
     
-    /* func createNewPosts() {
+    /* func createNewCities() {
+     
+     for city in cities {
+     
+     let keyCity = REF_CITIES.childByAutoId()
+     
+     let cityData = [
+     "uid": keyCity.key,
+     "title": city["title"],
+     "body" : city["body"],
+     "image": city["image"]
+     ]
+     
+     keyCity.updateChildValues(cityData)
+     }
+     
+     }
+     
+     func createNewPosts() {
      
      for post in posts {
      

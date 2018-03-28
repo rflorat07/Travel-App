@@ -13,17 +13,32 @@ class ExploreViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
-    var dataSities : [[String: String]]!
+    var citiesArray = [City]()
+    var searchCity  = [City]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         collectionView.delegate = self
         collectionView.dataSource = self
-        
-        dataSities = cities
+    
+        loadViewData()
+    }
+    
+    func loadViewData() {
         
         addTapGestures()
+        
+        LoadingIndicatorView.show("Loading")
+        DataService.instance.getAllCities(forUID: nil) { (returnedCitiesArray) in
+            
+            self.citiesArray = returnedCitiesArray.reversed()
+            self.searchCity  = returnedCitiesArray.reversed()
+            self.collectionView.reloadData()
+            
+            LoadingIndicatorView.hide()
+            
+        }
         
     }
     
@@ -46,17 +61,17 @@ class ExploreViewController: UIViewController {
 extension ExploreViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return dataSities.count
+        return searchCity.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "exploreCell", for: indexPath) as! ExploreCollectionViewCell
         
-        let city = dataSities[indexPath.row]
+        let city = searchCity[indexPath.row]
         
-        cell.titleLabel.text = city["title"]
-        cell.coverImageView.image = UIImage(named: city["image"]!)
+        cell.titleLabel.text = city.cityTitle
+        cell.coverImageView.image = UIImage(named: city.cityImage)
         
         return cell
     }
@@ -70,11 +85,11 @@ extension ExploreViewController: UISearchBarDelegate {
         let searchText = searchText.lowercased()
         
         if searchText.count == 0 {
-            dataSities = cities
+            self.searchCity = self.citiesArray
         } else {
-            dataSities = dataSities.filter {
+            self.searchCity = self.searchCity.filter {
                 
-                if $0["title"]?.lowercased().range(of: searchText) != nil {
+                if $0.cityTitle.lowercased().range(of: searchText) != nil {
                     return true
                 }
                 

@@ -27,7 +27,7 @@ class MainViewController: UIViewController {
         countryCollectionView.dataSource = self
         
         loadViewData()
-            
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
