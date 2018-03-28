@@ -13,7 +13,8 @@ class DataService {
     static let instance = DataService()
     
     private var _REF_BASE = DB_BASE
-    
+    private var _REF_SPOTS = DB_BASE.child("spots")
+    private var _REF_POSTS = DB_BASE.child("posts")
     private var _REF_USERS = DB_BASE.child("users")
     private var _REF_CITIES = DB_BASE.child("cities")
     private var _REF_COUNTRIES = DB_BASE.child("countries")
@@ -26,6 +27,14 @@ class DataService {
         return _REF_USERS
     }
     
+    var REF_SPOTS: DatabaseReference {
+        return _REF_SPOTS
+    }
+    
+    var REF_POSTS: DatabaseReference {
+        return _REF_POSTS
+    }
+    
     var REF_COUNTRIES: DatabaseReference {
         return _REF_COUNTRIES
     }
@@ -36,6 +45,55 @@ class DataService {
     
     func createDBUser(uid: String, userData: Dictionary<String, Any>) {
         REF_USERS.child(uid).updateChildValues(userData)
+    }
+    
+    func getAllPosts(handler: @escaping(_ spotsArray: [Post]) -> ()) {
+        
+        var postsArray = [Post]()
+        
+        REF_POSTS.observeSingleEvent(of: .value) { (postSnapshot) in
+            guard let postSnapshot = postSnapshot.children.allObjects as? [DataSnapshot] else { return }
+            
+            for post in postSnapshot {
+                
+                let name = post.childSnapshot(forPath: "name").value as! String
+                let avatar = post.childSnapshot(forPath: "avatar").value as! String
+                let caption = post.childSnapshot(forPath: "caption").value as! String
+                let body = post.childSnapshot(forPath: "body").value as! String
+                let image = post.childSnapshot(forPath: "image").value as! String
+               
+                let post  = Post.init(name: name, avatar: avatar, caption: caption, body: body, image: image)
+                
+                postsArray.append(post)
+                
+            }
+            handler(postsArray)
+        }
+        
+    }
+    
+    func getAllSpots(handler: @escaping(_ spotsArray: [Spot]) -> ()) {
+        
+        var spotsArray = [Spot]()
+        
+        REF_SPOTS.observeSingleEvent(of: .value) { (spotSnapshot) in
+            guard let spotSnapshot = spotSnapshot.children.allObjects as? [DataSnapshot] else { return }
+            
+            for spot in spotSnapshot {
+                
+                let title   = spot.childSnapshot(forPath: "title").value as! String
+                let caption = spot.childSnapshot(forPath: "caption").value as! String
+                let body    = spot.childSnapshot(forPath: "body").value as! String
+                let image   = spot.childSnapshot(forPath: "image").value as! String
+                let spot    = Spot.init(title: title, caption: caption, body: body, image: image)
+                
+                spotsArray.append(spot)
+                
+            }
+            
+            handler(spotsArray)
+        }
+        
     }
     
     func getAllCountries(handler: @escaping (_ countriesArray: [Country]) -> ()) {
@@ -89,41 +147,77 @@ class DataService {
         }
         
     }
-
+    
 }
 
 extension DataService {
     
-   /* func createNewCountry() {
-        
-        _ = countries.map { (country) in
-            
-            let keyCountry = REF_COUNTRIES.childByAutoId()
-            
-            let countryData = [
-                "title"   : country["title"],
-                "caption" : country["caption"],
-                "body"    : country["body"],
-                "image"   : country["image"]
-            ]
-            
-            let cities = country["places"] as! [[String: String]]
-            
-            _ = cities.map { ( city) in
-                
-                let keyCity = REF_CITIES.childByAutoId()
-                
-                let cityData = [
-                    "uid": keyCountry.key,
-                    "title": city["title"],
-                    "body" : city["body"],
-                    "image": city["image"]
-                ]
-                
-                keyCity.updateChildValues(cityData)
-            }
-            
-            keyCountry.updateChildValues(countryData)
-        }
-    } */
+    
+    /* func createNewPosts() {
+     
+     for post in posts {
+     
+     let keyPosts = REF_POSTS.childByAutoId()
+     
+     let postData = [
+     "name"   : post["name"],
+     "avatar" : post["avatar"],
+     "caption": post["caption"],
+     "body"   : post["body"],
+     "image"  : post["image"]
+     ]
+     
+     keyPosts.updateChildValues(postData)
+     }
+     }
+     
+     func createNewSpots() {
+     
+     for spot in spots {
+     
+     let keySpots = REF_SPOTS.childByAutoId()
+     
+     let spotData = [
+     "title"   : spot["title"],
+     "caption" : spot["caption"],
+     "body"    : spot["body"],
+     "image"   : spot["image"]
+     ]
+     
+     keySpots.updateChildValues(spotData)
+     }
+     }
+     
+     func createNewCountry() {
+     
+     _ = countries.map { (country) in
+     
+     let keyCountry = REF_COUNTRIES.childByAutoId()
+     
+     let countryData = [
+     "title"   : country["title"],
+     "caption" : country["caption"],
+     "body"    : country["body"],
+     "image"   : country["image"]
+     ]
+     
+     let cities = country["places"] as! [[String: String]]
+     
+     _ = cities.map { ( city) in
+     
+     let keyCity = REF_CITIES.childByAutoId()
+     
+     let cityData = [
+     "uid": keyCountry.key,
+     "title": city["title"],
+     "body" : city["body"],
+     "image": city["image"]
+     ]
+     
+     keyCity.updateChildValues(cityData)
+     }
+     
+     keyCountry.updateChildValues(countryData)
+     }
+     } */
 }

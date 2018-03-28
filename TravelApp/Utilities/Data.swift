@@ -170,6 +170,37 @@ let spots =  [
     ]
 ]
 
+let posts = [
+    [
+        "name" : "Amanda Rhodes",
+        "avatar" : "Amanda",
+        "caption" : "78 likes",
+        "body" : "Amanda Dean One of the best ways to make a great vacation quickly horrible is to choose the wrong accommodations for your trip.",
+        "image": "Photos-Cover"
+    ],
+    [
+        "name" : "Cecilia Dean",
+        "avatar" : "Cecilia",
+        "caption" : "100 likes",
+        "body" : "The National Museum of Scotland, Edinburgh, Scotland, was formed in 2006 with the merger of the new Museum of Scotland, with collections relating to Scottish antiquities, culture and history, and the adjacent Royal Museum (so renamed in 1995), with collections covering science and technology, natural history, and world cultures. ",
+        "image": "Museum-Scotland"
+    ],
+    [
+        "name" : "Becky Liu",
+        "avatar" : "Becky",
+        "caption" : "34 likes",
+        "body" : "Camera Obscura and World of Illusions is a major tourist attraction in the Old Town, Edinburgh, Scotland. Founded by entrepreneur Maria Theresa Short in 1835 and a key site in Patrick Geddes development of regional planning, it is located on the Castlehill section of the Royal Mile next to Edinburgh Castle.",
+        "image": "Camera-Obscura"
+    ],
+    [
+        "name" : "Edith Contes",
+        "avatar" : "Edith",
+        "caption" : "28 likes",
+        "body" : "La Nuova Zelanda si trova a sud-ovest dell'Oceano Pacifico e consiste di due isole principali formate dall'azione dei vulcani e delle glaciazioni. La capitale Wellington, nell'Isola del Nord, è sede del Te Papa Tongarewa, il grande museo nazionale.",
+        "image": "New-zealand"
+    ],
+]
+
 let continents = [
     [
         "option" : "Asia"

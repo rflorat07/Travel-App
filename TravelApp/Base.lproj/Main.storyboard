@@ -958,6 +958,9 @@
                                                             <constraint firstItem="6ZS-Qf-P0A" firstAttribute="leading" secondItem="Q6d-cy-3DJ" secondAttribute="leading" id="hfH-QY-NBX"/>
                                                         </constraints>
                                                         <size key="customSize" width="60" height="60"/>
+                                                        <connections>
+                                                            <outlet property="coverImageView" destination="h7a-be-Z0c" id="0kd-qW-dV1"/>
+                                                        </connections>
                                                     </collectionViewCell>
                                                 </cells>
                                             </collectionView>
@@ -1795,17 +1798,17 @@
                                 <rect key="frame" x="25" y="76" width="325" height="542"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="30" minimumInteritemSpacing="0.0" id="tqK-mS-2vF">
-                                    <size key="itemSize" width="325" height="429"/>
+                                    <size key="itemSize" width="325" height="430"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="newsPhotoCell" id="JrY-97-t0b" userLabel="News Photo Collection View Cell" customClass="NewsPhotoCollectionViewCell" customModule="TravelApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="325" height="429"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="325" height="430"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="325" height="429"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="325" height="430"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Niz-H8-i0I" customClass="DesignableView" customModule="Spring">
@@ -1831,16 +1834,16 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="XFJ-hM-gS8" userLabel="User Stack View">
-                                                    <rect key="frame" x="58" y="8" width="85" height="35"/>
+                                                    <rect key="frame" x="58" y="8" width="112.5" height="35"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Jennie Dean" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jHb-Hh-QxT">
-                                                            <rect key="frame" x="0.0" y="0.0" width="85" height="19.5"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Amanda Rhodes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jHb-Hh-QxT">
+                                                            <rect key="frame" x="0.0" y="0.0" width="112.5" height="19.5"/>
                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                                             <color key="textColor" red="0.19607843137254902" green="0.23137254901960785" blue="0.27058823529411763" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10min ago" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GXK-ka-qzL">
-                                                            <rect key="frame" x="0.0" y="20.5" width="85" height="14.5"/>
+                                                            <rect key="frame" x="0.0" y="20.5" width="112.5" height="14.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                             <color key="textColor" red="0.6588235294117647" green="0.71372549019607845" blue="0.78431372549019607" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -1971,6 +1974,13 @@
                                             <constraint firstItem="Oky-et-QoK" firstAttribute="leading" secondItem="JrY-97-t0b" secondAttribute="leading" id="rYu-ow-wMP"/>
                                             <constraint firstItem="XFJ-hM-gS8" firstAttribute="top" secondItem="JrY-97-t0b" secondAttribute="topMargin" id="zk3-08-Kl3"/>
                                         </constraints>
+                                        <connections>
+                                            <outlet property="avatarImageView" destination="1Ol-Lg-KVl" id="OaH-Q2-J9R"/>
+                                            <outlet property="bodyLabel" destination="ybF-jr-Afh" id="RdK-J3-Wn3"/>
+                                            <outlet property="captionLabel" destination="ski-ch-gMn" id="7g5-Gf-Ksf"/>
+                                            <outlet property="coverImageView" destination="6KB-9a-ntC" id="mkv-ba-TqI"/>
+                                            <outlet property="nameLabel" destination="jHb-Hh-QxT" id="EIa-Sv-ioE"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>

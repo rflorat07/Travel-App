@@ -26,7 +26,38 @@ class MainViewController: UIViewController {
         countryCollectionView.delegate = self
         countryCollectionView.dataSource = self
         
-        changeTabBarAndStatusBarStyle()
+        loadViewData()
+            
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        changeTabBarAndStatusBarStyle(mustChange: true)
+        
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        changeTabBarAndStatusBarStyle(mustChange: false)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "COUNTRY" {
+            
+            let toViewController = segue.destination as! CountryViewController
+            let indexPath = sender as! IndexPath
+            let country = countriesArray[indexPath.row]
+            
+            toViewController.country = country
+        }
+    }
+    
+    
+    func loadViewData() {
+        
+        changeTabBarAndStatusBarStyle(mustChange: true)
         
         LoadingIndicatorView.show("Loading")
         
@@ -39,35 +70,6 @@ class MainViewController: UIViewController {
             LoadingIndicatorView.hide()
         }
         
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        changeTabBarAndStatusBarStyle()
-        
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        
-        self.tabBarController?.tabBar.tintColor = .black
-        self.tabBarController?.tabBar.clipsToBounds = false
-        self.tabBarController?.tabBar.layer.borderWidth = 0.50
-        self.tabBarController?.tabBar.backgroundColor = .white
-        
-        UIApplication.shared.statusBarStyle = UIStatusBarStyle.default
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "COUNTRY" {
-            
-            let toViewController = segue.destination as! CountryViewController
-            let indexPath = sender as! IndexPath
-            let country = countriesArray[indexPath.row]
-            
-            toViewController.country = country
-        }
     }
     
     func settingAnimatedCollectionView() {
@@ -89,20 +91,34 @@ class MainViewController: UIViewController {
         
     }
     
-    func changeTabBarAndStatusBarStyle() {
+    func changeTabBarAndStatusBarStyle( mustChange: Bool ) {
         
-        // TabBar Style
+        if mustChange {
+            
+            // TabBar Style
+            self.tabBarController?.tabBar.tintColor = .white
+            self.tabBarController?.tabBar.clipsToBounds = true
+            self.tabBarController?.tabBar.layer.borderColor = #colorLiteral(red: 0.6588235294, green: 0.7137254902, blue: 0.7843137255, alpha: 1)
+            self.tabBarController?.tabBar.layer.borderWidth = 0.0
+            self.tabBarController?.tabBar.backgroundColor = .clear
+            self.tabBarController?.tabBar.backgroundImage = UIImage()
+            
+            // StatusBar Style
+            UIApplication.shared.statusBarStyle = .lightContent
+            
+        } else {
+            
+            // TabBar Style
+            self.tabBarController?.tabBar.tintColor = .black
+            self.tabBarController?.tabBar.clipsToBounds = false
+            self.tabBarController?.tabBar.layer.borderWidth = 0.50
+            self.tabBarController?.tabBar.backgroundColor = .white
+            
+            // StatusBar Style
+            UIApplication.shared.statusBarStyle = UIStatusBarStyle.default
+        }
         
-        self.tabBarController?.tabBar.tintColor = .white
-        self.tabBarController?.tabBar.clipsToBounds = true
-        self.tabBarController?.tabBar.layer.borderColor = #colorLiteral(red: 0.6588235294, green: 0.7137254902, blue: 0.7843137255, alpha: 1)
-        self.tabBarController?.tabBar.layer.borderWidth = 0.0
-        self.tabBarController?.tabBar.backgroundColor = .clear
-        self.tabBarController?.tabBar.backgroundImage = UIImage()
-        
-        // StatusBar Style
-        
-        UIApplication.shared.statusBarStyle = .lightContent
+
     }
     
      @IBAction func unwindToMainViewController(segue:UIStoryboardSegue) { }

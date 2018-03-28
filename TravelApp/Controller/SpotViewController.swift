@@ -14,7 +14,7 @@ class SpotViewController: UIViewController {
     @IBOutlet weak var bodyLabel: UILabel!
     @IBOutlet weak var coverImageView: UIImageView!
     
-    var spot : [String: String]!
+    var spot : Spot!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,9 +23,9 @@ class SpotViewController: UIViewController {
     }
 
     func loadViewData() {
-        titleLabel.text = spot["title"]
-        bodyLabel.text = spot["body"]
-        coverImageView.image = UIImage(named: spot["image"]!)
+        titleLabel.text = spot.spotTitle
+        bodyLabel.text = spot.spotBody
+        coverImageView.image = UIImage(named: spot.spotImage)
     }
     
     

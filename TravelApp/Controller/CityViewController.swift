@@ -24,6 +24,7 @@ class CityViewController: UIViewController {
     
     
     var city : City!
+    var spotsArray = [Spot]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,9 +41,24 @@ class CityViewController: UIViewController {
     }
     
     func loadViewData() {
+        
         cityLabel.text = city.cityTitle
         bodyLabel.text = city.cityBody
         coverImageView.image = UIImage(named: city.cityImage)
+        
+        LoadingIndicatorView.show("Loading")
+        
+        DataService.instance.getAllSpots { (returnedSpotsArray) in
+            
+            self.spotsArray = returnedSpotsArray
+            
+            self.spotCollectionView.reloadData()
+            self.photosCollectionView.reloadData()
+            
+            LoadingIndicatorView.hide()
+        }
+        
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -50,11 +66,10 @@ class CityViewController: UIViewController {
         if segue.identifier == "SPOT_INFO" {
             let toViewController = segue.destination as! SpotViewController
             let indexPath = sender as! IndexPath
-            let spot = spots[indexPath.row]
+            let spot = spotsArray[indexPath.row]
             
             toViewController.spot = spot
         }
-        
     }
     
     
@@ -96,7 +111,7 @@ extension CityViewController: UICollectionViewDelegate, UICollectionViewDataSour
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return spots.count
+        return spotsArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -104,16 +119,20 @@ extension CityViewController: UICollectionViewDelegate, UICollectionViewDataSour
         if collectionView == self.photosCollectionView {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "photosCell", for: indexPath) as! PhotosCollectionViewCell
             
+            let spot = spotsArray[indexPath.row]
+            
+            cell.coverImageView.image = UIImage(named: spot.spotImage)
+            
             return cell
             
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "spotCell", for: indexPath) as! SpotCollectionViewCell
             
-            let spot = spots[indexPath.row]
+            let spot = spotsArray[indexPath.row]
             
-            cell.titleLabel.text = spot["title"]
-            cell.captionLabel.text = spot["caption"]
-            cell.coverImageView.image = UIImage(named: spot["image"]!)
+            cell.titleLabel.text = spot.spotTitle
+            cell.captionLabel.text = spot.spotCaption
+            cell.coverImageView.image = UIImage(named: spot.spotImage)
             
             return cell
         }
