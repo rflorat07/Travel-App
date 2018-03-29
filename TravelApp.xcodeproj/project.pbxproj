@@ -15,6 +15,7 @@
 		4F1F63E4204EDA0800148499 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F1F63E2204EDA0800148499 /* Main.storyboard */; };
 		4F1F63E6204EDA0800148499 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F1F63E5204EDA0800148499 /* Assets.xcassets */; };
 		4F1F63E9204EDA0800148499 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F1F63E7204EDA0800148499 /* LaunchScreen.storyboard */; };
+		4F310FFE206BF36800D8E9F8 /* ExploreInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F310FFD206BF36800D8E9F8 /* ExploreInfoViewController.swift */; };
 		4F4FAD0820580A48006D2ADB /* ExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4FAD0720580A48006D2ADB /* ExploreViewController.swift */; };
 		4F4FAD0A20580A89006D2ADB /* ExploreCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4FAD0920580A89006D2ADB /* ExploreCollectionViewCell.swift */; };
 		4F619F54205198660020DAB5 /* CountryInfoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F619F53205198660020DAB5 /* CountryInfoCollectionViewCell.swift */; };
@@ -27,6 +28,7 @@
 		4F723E8520640650009FB43B /* FiltersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F723E8420640650009FB43B /* FiltersViewController.swift */; };
 		4F780C7B206A84D700F2A1BB /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F780C7A206A84D700F2A1BB /* Country.swift */; };
 		4F780C7D206A9AE800F2A1BB /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F780C7C206A9AE800F2A1BB /* City.swift */; };
+		4F7D12B0206CFCD7004F9096 /* PhotoGalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7D12AF206CFCD7004F9096 /* PhotoGalleryViewController.swift */; };
 		4F9A1C06205A6CAD002663EF /* RobotoSlab-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4F9A1C02205A6CA7002663EF /* RobotoSlab-Bold.ttf */; };
 		4F9A1C07205A6CAD002663EF /* RobotoSlab-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4F9A1C03205A6CA9002663EF /* RobotoSlab-Light.ttf */; };
 		4F9A1C08205A6CAD002663EF /* RobotoSlab-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4F9A1C04205A6CAA002663EF /* RobotoSlab-Regular.ttf */; };
@@ -68,6 +70,7 @@
 		4F1F63E5204EDA0800148499 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4F1F63E8204EDA0800148499 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4F1F63EA204EDA0800148499 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4F310FFD206BF36800D8E9F8 /* ExploreInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreInfoViewController.swift; sourceTree = "<group>"; };
 		4F4FAD0720580A48006D2ADB /* ExploreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViewController.swift; sourceTree = "<group>"; };
 		4F4FAD0920580A89006D2ADB /* ExploreCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreCollectionViewCell.swift; sourceTree = "<group>"; };
 		4F619F53205198660020DAB5 /* CountryInfoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryInfoCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -80,6 +83,7 @@
 		4F723E8420640650009FB43B /* FiltersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersViewController.swift; sourceTree = "<group>"; };
 		4F780C7A206A84D700F2A1BB /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		4F780C7C206A9AE800F2A1BB /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
+		4F7D12AF206CFCD7004F9096 /* PhotoGalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGalleryViewController.swift; sourceTree = "<group>"; };
 		4F9A1C02205A6CA7002663EF /* RobotoSlab-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoSlab-Bold.ttf"; sourceTree = "<group>"; };
 		4F9A1C03205A6CA9002663EF /* RobotoSlab-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoSlab-Light.ttf"; sourceTree = "<group>"; };
 		4F9A1C04205A6CAA002663EF /* RobotoSlab-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoSlab-Regular.ttf"; sourceTree = "<group>"; };
@@ -229,6 +233,8 @@
 				4F691D7220627C01006CF28E /* SpotViewController.swift */,
 				4F723E7C2063B3E1009FB43B /* ProfileEditViewController.swift */,
 				4F723E8420640650009FB43B /* FiltersViewController.swift */,
+				4F310FFD206BF36800D8E9F8 /* ExploreInfoViewController.swift */,
+				4F7D12AF206CFCD7004F9096 /* PhotoGalleryViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -441,9 +447,11 @@
 				4FECEF2A2056E311008006D9 /* PhotosViewController.swift in Sources */,
 				4F691D7320627C01006CF28E /* SpotViewController.swift in Sources */,
 				4FD844B6205194D0003DCAC3 /* CountryInfoViewController.swift in Sources */,
+				4F7D12B0206CFCD7004F9096 /* PhotoGalleryViewController.swift in Sources */,
 				4FD844B420513828003DCAC3 /* CountryViewController.swift in Sources */,
 				4F9A1C0B205A6FE3002663EF /* ActivityViewController.swift in Sources */,
 				4F4FAD0A20580A89006D2ADB /* ExploreCollectionViewCell.swift in Sources */,
+				4F310FFE206BF36800D8E9F8 /* ExploreInfoViewController.swift in Sources */,
 				4FD814FE205028E900AE40B6 /* MainViewController.swift in Sources */,
 				4F723E832063F1CA009FB43B /* FeaturesCollectionViewCell.swift in Sources */,
 				4F723E812063F086009FB43B /* ContinentCollectionViewCell.swift in Sources */,

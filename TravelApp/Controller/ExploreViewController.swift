@@ -21,14 +21,15 @@ class ExploreViewController: UIViewController {
         
         collectionView.delegate = self
         collectionView.dataSource = self
-    
+        
         loadViewData()
     }
     
     func loadViewData() {
         
-        addTapGestures()
-        
+        self.hideKeyboardWhenTappedAround()
+        self.collectionView.keyboardDismissMode = .onDrag
+    
         LoadingIndicatorView.show("Loading")
         DataService.instance.getAllCities(forUID: nil) { (returnedCitiesArray) in
             
@@ -41,16 +42,6 @@ class ExploreViewController: UIViewController {
         }
         
     }
-    
-    func addTapGestures() {
-        let gesture = UITapGestureRecognizer(target: self, action: #selector(tapAndHideKeyboard))
-        self.view.addGestureRecognizer(gesture)
-    }
-    
-    @objc func tapAndHideKeyboard() {
-        self.view.endEditing(false)
-    }
-    
     
     @IBAction func filterButtonTapped(_ sender: UIButton) {
         performSegue(withIdentifier: "EXPLORE_FILTER", sender: nil)
@@ -74,6 +65,20 @@ extension ExploreViewController: UICollectionViewDelegate, UICollectionViewDataS
         cell.coverImageView.image = UIImage(named: city.cityImage)
         
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        print("didSelectItemAt")
+        
+        let exploreInfoView = self.storyboard?.instantiateViewController(withIdentifier: "ExploreInfoViewController") as? ExploreInfoViewController
+        
+        exploreInfoView?.modalTransitionStyle = .crossDissolve
+        exploreInfoView?.modalPresentationStyle = .overFullScreen
+        
+        exploreInfoView?.city = searchCity[indexPath.row]
+        
+        self.present(exploreInfoView!, animated: true, completion: nil)
     }
     
 }

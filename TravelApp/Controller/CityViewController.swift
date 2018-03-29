@@ -143,8 +143,16 @@ extension CityViewController: UICollectionViewDelegate, UICollectionViewDataSour
         
         if collectionView == self.spotCollectionView {
             performSegue(withIdentifier: "SPOT_INFO", sender: indexPath)
+            
+        } else {
+            let photoGallery = self.storyboard?.instantiateViewController(withIdentifier: "PhotoGalleryViewController") as! PhotoGalleryViewController
+            
+            photoGallery.imageToShow = spotsArray[indexPath.row].spotImage
+            
+            photoGallery.modalTransitionStyle = .crossDissolve
+            photoGallery.modalPresentationStyle = .overFullScreen
+            
+            present(photoGallery, animated: true, completion: nil)
         }
-        
     }
-    
 }
