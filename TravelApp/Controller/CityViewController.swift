@@ -147,7 +147,8 @@ extension CityViewController: UICollectionViewDelegate, UICollectionViewDataSour
         } else {
             let photoGallery = self.storyboard?.instantiateViewController(withIdentifier: "PhotoGalleryViewController") as! PhotoGalleryViewController
             
-            photoGallery.imageToShow = spotsArray[indexPath.row].spotImage
+            photoGallery.indexPath = indexPath as IndexPath
+            photoGallery.photosArray = spotsArray
             
             photoGallery.modalTransitionStyle = .crossDissolve
             photoGallery.modalPresentationStyle = .overFullScreen

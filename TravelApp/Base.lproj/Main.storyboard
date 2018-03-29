@@ -2668,22 +2668,57 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7kw-DY-NjB">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="4zu-T4-wHA" userLabel="Photo Gallery Collection View">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Amanda" translatesAutoresizingMaskIntoConstraints="NO" id="j4a-ts-2yw" userLabel="Image View">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                                    </imageView>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="j4a-ts-2yw" secondAttribute="bottom" id="6vG-by-okr"/>
-                                    <constraint firstItem="j4a-ts-2yw" firstAttribute="top" secondItem="7kw-DY-NjB" secondAttribute="top" id="HP0-Yy-aqO"/>
-                                    <constraint firstItem="j4a-ts-2yw" firstAttribute="leading" secondItem="7kw-DY-NjB" secondAttribute="leading" id="Hey-ac-Jmn"/>
-                                    <constraint firstAttribute="trailing" secondItem="j4a-ts-2yw" secondAttribute="trailing" id="muU-xT-L5x"/>
-                                    <constraint firstItem="j4a-ts-2yw" firstAttribute="centerY" secondItem="7kw-DY-NjB" secondAttribute="centerY" id="weS-AC-vlS"/>
-                                    <constraint firstItem="j4a-ts-2yw" firstAttribute="centerX" secondItem="7kw-DY-NjB" secondAttribute="centerX" id="y52-xJ-lyr"/>
-                                </constraints>
-                            </scrollView>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="1z4-Wm-hVQ">
+                                    <size key="itemSize" width="414" height="536"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="photoGalleryCell" id="XBl-T9-Aus" userLabel="Photo Gallery Collection View Cell" customClass="PhotoGalleryCellCollectionViewCell" customModule="TravelApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="100" width="414" height="536"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="536"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7kw-DY-NjB">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="536"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Amanda" translatesAutoresizingMaskIntoConstraints="NO" id="j4a-ts-2yw" userLabel="Image View">
+                                                            <rect key="frame" x="0.0" y="0.0" width="414" height="536"/>
+                                                        </imageView>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="bottom" secondItem="j4a-ts-2yw" secondAttribute="bottom" id="2ov-3X-H3p"/>
+                                                        <constraint firstItem="j4a-ts-2yw" firstAttribute="top" secondItem="7kw-DY-NjB" secondAttribute="top" id="7nQ-zB-vze"/>
+                                                        <constraint firstItem="j4a-ts-2yw" firstAttribute="centerY" secondItem="7kw-DY-NjB" secondAttribute="centerY" id="cnZ-bh-DGA"/>
+                                                        <constraint firstItem="j4a-ts-2yw" firstAttribute="leading" secondItem="7kw-DY-NjB" secondAttribute="leading" id="d98-Kv-0F5"/>
+                                                        <constraint firstItem="j4a-ts-2yw" firstAttribute="centerX" secondItem="7kw-DY-NjB" secondAttribute="centerX" id="frO-pp-Sr7"/>
+                                                        <constraint firstAttribute="trailing" secondItem="j4a-ts-2yw" secondAttribute="trailing" id="uk1-Q8-37K"/>
+                                                    </constraints>
+                                                </scrollView>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="7kw-DY-NjB" firstAttribute="leading" secondItem="XBl-T9-Aus" secondAttribute="leading" id="0T4-2J-xrD"/>
+                                            <constraint firstAttribute="trailing" secondItem="7kw-DY-NjB" secondAttribute="trailing" id="Nc1-zb-YFr"/>
+                                            <constraint firstAttribute="bottom" secondItem="7kw-DY-NjB" secondAttribute="bottom" id="TrZ-V9-kwo"/>
+                                            <constraint firstItem="7kw-DY-NjB" firstAttribute="centerX" secondItem="XBl-T9-Aus" secondAttribute="centerX" id="X7Q-CU-MG4"/>
+                                            <constraint firstItem="7kw-DY-NjB" firstAttribute="top" secondItem="XBl-T9-Aus" secondAttribute="top" id="hhR-zp-JB4"/>
+                                            <constraint firstItem="7kw-DY-NjB" firstAttribute="centerY" secondItem="XBl-T9-Aus" secondAttribute="centerY" id="iO2-hI-AQo"/>
+                                        </constraints>
+                                        <size key="customSize" width="414" height="536"/>
+                                        <connections>
+                                            <outlet property="imageView" destination="j4a-ts-2yw" id="8rd-5c-vlX"/>
+                                            <outlet property="scrollView" destination="7kw-DY-NjB" id="SOr-bb-VVu"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bMq-eO-r7A">
                                 <rect key="frame" x="25" y="45" width="21" height="22"/>
                                 <state key="normal" image="close"/>
@@ -2694,19 +2729,18 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="7kw-DY-NjB" firstAttribute="top" secondItem="fSQ-Gj-E9B" secondAttribute="top" id="1Kz-oh-4Se"/>
                             <constraint firstItem="bMq-eO-r7A" firstAttribute="top" secondItem="68o-Xv-gSM" secondAttribute="top" constant="25" id="2Q6-or-DRK"/>
-                            <constraint firstItem="7kw-DY-NjB" firstAttribute="leading" secondItem="68o-Xv-gSM" secondAttribute="leading" id="MNN-sX-kNc"/>
+                            <constraint firstItem="4zu-T4-wHA" firstAttribute="leading" secondItem="68o-Xv-gSM" secondAttribute="leading" id="3j9-a4-q8Y"/>
+                            <constraint firstItem="68o-Xv-gSM" firstAttribute="trailing" secondItem="4zu-T4-wHA" secondAttribute="trailing" id="8RA-8k-AVC"/>
+                            <constraint firstItem="68o-Xv-gSM" firstAttribute="bottom" secondItem="4zu-T4-wHA" secondAttribute="bottom" id="NFp-qC-DvL"/>
                             <constraint firstItem="bMq-eO-r7A" firstAttribute="leading" secondItem="68o-Xv-gSM" secondAttribute="leading" constant="25" id="ftj-3U-vKR"/>
-                            <constraint firstItem="7kw-DY-NjB" firstAttribute="bottom" secondItem="68o-Xv-gSM" secondAttribute="bottom" id="kPL-Xv-tQw"/>
-                            <constraint firstItem="7kw-DY-NjB" firstAttribute="trailing" secondItem="68o-Xv-gSM" secondAttribute="trailing" id="zPm-yG-V2x"/>
+                            <constraint firstItem="4zu-T4-wHA" firstAttribute="top" secondItem="fSQ-Gj-E9B" secondAttribute="top" id="ta6-PG-ADR"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="68o-Xv-gSM"/>
                     </view>
                     <connections>
                         <outlet property="closeButton" destination="bMq-eO-r7A" id="oNm-XM-2Fo"/>
-                        <outlet property="image" destination="j4a-ts-2yw" id="Gsl-eg-7h8"/>
-                        <outlet property="scrollView" destination="7kw-DY-NjB" id="ZTw-XG-mdc"/>
+                        <outlet property="collectionView" destination="4zu-T4-wHA" id="fOY-2o-YdI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1J6-IK-anC" userLabel="First Responder" sceneMemberID="firstResponder"/>

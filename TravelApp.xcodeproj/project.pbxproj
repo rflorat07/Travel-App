@@ -29,6 +29,7 @@
 		4F780C7B206A84D700F2A1BB /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F780C7A206A84D700F2A1BB /* Country.swift */; };
 		4F780C7D206A9AE800F2A1BB /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F780C7C206A9AE800F2A1BB /* City.swift */; };
 		4F7D12B0206CFCD7004F9096 /* PhotoGalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7D12AF206CFCD7004F9096 /* PhotoGalleryViewController.swift */; };
+		4F7D12B2206D1BAF004F9096 /* PhotoGalleryCellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7D12B1206D1BAF004F9096 /* PhotoGalleryCellCollectionViewCell.swift */; };
 		4F9A1C06205A6CAD002663EF /* RobotoSlab-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4F9A1C02205A6CA7002663EF /* RobotoSlab-Bold.ttf */; };
 		4F9A1C07205A6CAD002663EF /* RobotoSlab-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4F9A1C03205A6CA9002663EF /* RobotoSlab-Light.ttf */; };
 		4F9A1C08205A6CAD002663EF /* RobotoSlab-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4F9A1C04205A6CAA002663EF /* RobotoSlab-Regular.ttf */; };
@@ -84,6 +85,7 @@
 		4F780C7A206A84D700F2A1BB /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		4F780C7C206A9AE800F2A1BB /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 		4F7D12AF206CFCD7004F9096 /* PhotoGalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGalleryViewController.swift; sourceTree = "<group>"; };
+		4F7D12B1206D1BAF004F9096 /* PhotoGalleryCellCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGalleryCellCollectionViewCell.swift; sourceTree = "<group>"; };
 		4F9A1C02205A6CA7002663EF /* RobotoSlab-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoSlab-Bold.ttf"; sourceTree = "<group>"; };
 		4F9A1C03205A6CA9002663EF /* RobotoSlab-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoSlab-Light.ttf"; sourceTree = "<group>"; };
 		4F9A1C04205A6CAA002663EF /* RobotoSlab-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoSlab-Regular.ttf"; sourceTree = "<group>"; };
@@ -253,6 +255,7 @@
 				4F723E7A2063B382009FB43B /* TripsCollectionViewCell.swift */,
 				4F723E802063F086009FB43B /* ContinentCollectionViewCell.swift */,
 				4F723E822063F1CA009FB43B /* FeaturesCollectionViewCell.swift */,
+				4F7D12B1206D1BAF004F9096 /* PhotoGalleryCellCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -457,6 +460,7 @@
 				4F723E812063F086009FB43B /* ContinentCollectionViewCell.swift in Sources */,
 				4F780C7B206A84D700F2A1BB /* Country.swift in Sources */,
 				4F9C951820690AA1007F6AD3 /* DataService.swift in Sources */,
+				4F7D12B2206D1BAF004F9096 /* PhotoGalleryCellCollectionViewCell.swift in Sources */,
 				4F723E7D2063B3E1009FB43B /* ProfileEditViewController.swift in Sources */,
 				4F9A1C1D205ADEA1002663EF /* ProfileViewController.swift in Sources */,
 				4FECEF282056E2CC008006D9 /* NewsPhotoCollectionViewCell.swift in Sources */,

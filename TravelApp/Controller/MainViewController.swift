@@ -84,11 +84,10 @@ class MainViewController: UIViewController {
         layout.estimatedItemSize = CGSize( width: 259, height: 390)
         countryCollectionView.collectionViewLayout = layout
         
-      /*  if countriesArray.count > 1 {
-            countryCollectionView.scrollToItem(at: IndexPath(item: 1, section: 0), at: .centeredHorizontally, animated: true)
-        } */
-        
-        
+        if countriesArray.count > 1 {
+            countryCollectionView.scrollToItem(at: IndexPath(item: 1, section: 0), at: .centeredHorizontally, animated: false)
+        }
+
     }
     
     func changeTabBarAndStatusBarStyle( mustChange: Bool ) {

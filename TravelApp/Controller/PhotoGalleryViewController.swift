@@ -8,27 +8,29 @@
 
 import UIKit
 
-class PhotoGalleryViewController: UIViewController, UIScrollViewDelegate {
+class PhotoGalleryViewController: UIViewController {
     
-    @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var closeButton: UIButton!
-    @IBOutlet weak var scrollView: UIScrollView!
-
-    var imageToShow : String!
+    @IBOutlet weak var collectionView: UICollectionView!
+    
+    var indexPath : IndexPath!
+    var photosArray = [Spot]()
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         
-        scrollView.delegate = self
-        
-        self.scrollView.minimumZoomScale = 1.0
-        self.scrollView.maximumZoomScale = 3.0
+        collectionView.delegate = self
+        collectionView.dataSource = self
         
         UIApplication.shared.isStatusBarHidden = true
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
-        tapGestureRecognizer()
-        
-        image.image = UIImage(named: imageToShow)
+        view.layoutIfNeeded()
+        collectionView.scrollToItem(at: self.indexPath, at: .centeredHorizontally, animated: false)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -37,34 +39,31 @@ class PhotoGalleryViewController: UIViewController, UIScrollViewDelegate {
         UIApplication.shared.isStatusBarHidden = false
     }
     
-    
-    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
-        return image
-    }
-    
-    func tapGestureRecognizer(){
-        
-        let tap = UITapGestureRecognizer(target: self, action: #selector(PhotoGalleryViewController.zoom))
-        
-        tap.numberOfTapsRequired = 2
-        
-        scrollView.addGestureRecognizer(tap)
-    }
-    
-    @objc func zoom(sender: UITapGestureRecognizer) {
-        
-        if (scrollView.zoomScale < 1.5) {
-            
-            scrollView.setZoomScale(scrollView.maximumZoomScale, animated: true)
-            
-        } else {
-            scrollView.setZoomScale(scrollView.minimumZoomScale, animated: true)
-        }
-    }
-    
     @IBAction func closeButtonTapped(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
     }
+}
+
+extension PhotoGalleryViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return photosArray.count
+    }
     
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "photoGalleryCell", for: indexPath) as! PhotoGalleryCellCollectionViewCell
+        
+        let photo = photosArray[indexPath.row]
+        
+        cell.imageView.image = UIImage(named: photo.spotImage)
+        
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        return CGSize(width: view.frame.width, height: view.frame.height)
+    }
     
 }
+
