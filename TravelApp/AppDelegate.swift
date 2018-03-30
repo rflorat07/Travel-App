@@ -32,7 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             mainView.modalTransitionStyle = .crossDissolve
             
             window?.rootViewController?.present(mainView, animated: true, completion: nil)
-        }  
+        }
         
         return true
     }

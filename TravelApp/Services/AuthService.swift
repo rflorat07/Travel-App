@@ -26,7 +26,13 @@ class AuthService {
                 
             } else if let user = user {
                 
-                let userData = ["provider": user.providerID, "email": user.email, "username": username]
+                let userData = [
+                    "provider": user.providerID,
+                    "username": username,
+                    "city" : "",
+                    "email": user.email,
+                    "avatar": ""
+                ]
                 
                 DataService.instance.createDBUser(uid: user.uid, userData: userData as Any as! Dictionary<String, Any> )
                 
@@ -49,9 +55,10 @@ class AuthService {
                 
             }
             else if let user = user {
-                
                 loginComplete(true, nil)
                 
+                DataService.instance.getCurrentUserInfo()
+            
                 print("Login Successfully: \(user.uid)")
             }
         }
