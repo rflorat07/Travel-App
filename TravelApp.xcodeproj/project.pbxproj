@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1447B276DF4D0E0407F2D027 /* Pods_TravelApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD2082BC56A66F16FFB9D963 /* Pods_TravelApp.framework */; };
+		4F02CC8B206E280100518894 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F02CC8A206E280100518894 /* User.swift */; };
 		4F14053C2052CF5700DE135D /* CityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F14053B2052CF5700DE135D /* CityViewController.swift */; };
 		4F14053E2052D13F00DE135D /* PhotosCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F14053D2052D13F00DE135D /* PhotosCollectionViewCell.swift */; };
 		4F1F63DF204EDA0800148499 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1F63DE204EDA0800148499 /* AppDelegate.swift */; };
@@ -62,6 +63,7 @@
 
 /* Begin PBXFileReference section */
 		0E3702EF7024C55F198118D5 /* Pods-TravelApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TravelApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TravelApp/Pods-TravelApp.debug.xcconfig"; sourceTree = "<group>"; };
+		4F02CC8A206E280100518894 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		4F14053B2052CF5700DE135D /* CityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityViewController.swift; sourceTree = "<group>"; };
 		4F14053D2052D13F00DE135D /* PhotosCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewCell.swift; sourceTree = "<group>"; };
 		4F1F63DB204EDA0800148499 /* TravelApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -184,6 +186,7 @@
 				4F780C7C206A9AE800F2A1BB /* City.swift */,
 				4FC91897206B897F00B7B32B /* Spot.swift */,
 				4FC91899206B9A2B00B7B32B /* Post.swift */,
+				4F02CC8A206E280100518894 /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -399,6 +402,7 @@
 				"${BUILT_PRODUCTS_DIR}/AnimatedCollectionViewLayout/AnimatedCollectionViewLayout.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/Spring/Spring.framework",
 				"${BUILT_PRODUCTS_DIR}/XLPagerTabStrip/XLPagerTabStrip.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
@@ -409,6 +413,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AnimatedCollectionViewLayout.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Spring.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XLPagerTabStrip.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
@@ -446,6 +451,7 @@
 				4F14053E2052D13F00DE135D /* PhotosCollectionViewCell.swift in Sources */,
 				4F9A1C0D205A7319002663EF /* ActivityYouViewController.swift in Sources */,
 				4F14053C2052CF5700DE135D /* CityViewController.swift in Sources */,
+				4F02CC8B206E280100518894 /* User.swift in Sources */,
 				4FD814FC204FF66600AE40B6 /* RegisterViewController.swift in Sources */,
 				4FECEF2A2056E311008006D9 /* PhotosViewController.swift in Sources */,
 				4F691D7320627C01006CF28E /* SpotViewController.swift in Sources */,

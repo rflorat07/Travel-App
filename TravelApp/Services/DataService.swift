@@ -12,12 +12,17 @@ import Firebase
 class DataService {
     static let instance = DataService()
     
+    private var _USER_INFO : User!
     private var _REF_BASE = DB_BASE
     private var _REF_SPOTS = DB_BASE.child("spots")
     private var _REF_POSTS = DB_BASE.child("posts")
     private var _REF_USERS = DB_BASE.child("users")
     private var _REF_CITIES = DB_BASE.child("cities")
     private var _REF_COUNTRIES = DB_BASE.child("countries")
+    
+    var USER_INFO : User {
+        return _USER_INFO
+    }
     
     var REF_BASE: DatabaseReference {
         return _REF_BASE
@@ -160,6 +165,42 @@ class DataService {
             }
             
             handler(citiesArray)
+        }
+    }
+    
+    func getCurrentUserInfo(){
+        
+        if Auth.auth().currentUser != nil {
+            let userUID = Auth.auth().currentUser?.uid
+            getUserInfo(forID: userUID!, handler: { (userInfo) in
+                self._USER_INFO = userInfo
+            })
+        }
+    }
+    
+    func getUserInfo(forID userUID: String, handler: @escaping (_ userInfo: User) ->()) {
+        
+        var userInfo: User!
+        
+        REF_USERS.observe(.value) { (userSnapshot) in
+            
+            guard let userSnapshot = userSnapshot.children.allObjects as? [DataSnapshot] else  { return }
+            
+            for user in userSnapshot {
+                
+                if user.key == userUID {
+                    
+                    let name = user.childSnapshot(forPath: "username").value as! String
+                    let city = user.childSnapshot(forPath: "city").value as! String
+                    let email = user.childSnapshot(forPath: "email").value as! String
+                    let avatar = user.childSnapshot(forPath: "avatar").value as! String
+                    
+                    userInfo = User(name: name, city: city, email: email, avatar: avatar)
+                }
+                
+            }
+            
+            handler(userInfo)
         }
     }
     

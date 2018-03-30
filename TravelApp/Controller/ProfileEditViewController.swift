@@ -7,14 +7,19 @@
 //
 
 import UIKit
+import Kingfisher
 
 class ProfileEditViewController: UIViewController {
     
     @IBOutlet weak var coverView: UIView!
-    @IBOutlet weak var avatarImageView: UIView!
+    @IBOutlet weak var avatarImageView: UIImageView!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var coverImageView: UIImageView!
     @IBOutlet weak var tripsCollectionView: UICollectionView!
+    
+    @IBOutlet weak var cityTextField: UITextField!
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var usernameTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,8 +27,21 @@ class ProfileEditViewController: UIViewController {
         scrollView.delegate = self
         tripsCollectionView.delegate = self
         tripsCollectionView.dataSource = self
+        
+        loadViewData()
     }
     
+    
+    func loadViewData() {
+        
+        let userInfo = DataService.instance.USER_INFO
+        
+        self.usernameTextField.text = userInfo.userName
+        self.cityTextField.text = userInfo.userCity
+        self.emailTextField.text = userInfo.userEmail
+        self.avatarImageView.kf.setImage(with: URL(string: userInfo.userAvatar))
+        self.avatarImageView.kf.indicatorType = .activity
+    }
     
     @IBAction func backButtonTapped(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)

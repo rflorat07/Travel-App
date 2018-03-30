@@ -8,9 +8,12 @@
 
 import UIKit
 import Firebase
+import Kingfisher
 
 class ProfileViewController: UIViewController {
     
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var navTitleLabel: UILabel!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var coverProfileView: UIView!
@@ -18,6 +21,7 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var coverImageView: UIImageView!
     @IBOutlet weak var tripsCollectionView: UICollectionView!
     @IBOutlet weak var signOutButton: UIButton!
+    @IBOutlet weak var avatarImageView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,9 +29,20 @@ class ProfileViewController: UIViewController {
         scrollView.delegate = self
         tripsCollectionView.delegate = self
         tripsCollectionView.dataSource = self
-    
+        
+        loadViewData()
+        
     }
     
+    func loadViewData() {
+        
+        let userInfo = DataService.instance.USER_INFO
+        
+        self.nameLabel.text = userInfo.userName
+        self.cityLabel.text = userInfo.userCity
+        self.avatarImageView.kf.setImage(with: URL(string: userInfo.userAvatar))
+        self.avatarImageView.kf.indicatorType = .activity
+    }
     
     @IBAction func profileEditButtonTapped(_ sender: UIButton) {
         performSegue(withIdentifier: "PROFILE_EDIT", sender:nil )

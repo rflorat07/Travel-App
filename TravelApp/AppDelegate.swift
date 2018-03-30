@@ -22,6 +22,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         if Auth.auth().currentUser != nil {
             
+            DataService.instance.getCurrentUserInfo()
+            
             let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
             let mainView = storyboard.instantiateViewController(withIdentifier: "MainView")
             window?.makeKeyAndVisible()

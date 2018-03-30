@@ -10,5 +10,6 @@ COCOAPODS - https://cocoapods.org/
 2. pod 'Firebase/Core'
 3. pod 'Firebase/Auth'
 4. pod 'Firebase/Database'
-5. pod 'XLPagerTabStrip', '~> 8.0'
-6. pod 'AnimatedCollectionViewLayout'
+5. pod 'Kingfisher', '~> 4.0'
+6. pod 'XLPagerTabStrip', '~> 8.0'
+7. pod 'AnimatedCollectionViewLayout'
